@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saac-reference"
+version = "0.1.0"
+description = "Shared Agent Authority Contract (SAAC) reference fixture"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic>=2.9,<3", "cryptography>=43,<51", "httpx>=0.27,<1"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+saacd = "saac.api:main"
+saac-actor = "saac.actor:main"
+
+[tool.setuptools.packages.find]
+include = ["saac*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

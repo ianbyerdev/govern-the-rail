@@ -1,0 +1,39 @@
+services:
+  risk:
+    build: .
+    ports:
+      - "127.0.0.1:${SAAC_DEMO_PORT:-8000}:8000"
+    volumes:
+      - risk-state:/state
+      - actor-credential:/actor-credential
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
+  actor:
+    build: .
+    profiles: [actor]
+    user: "10002:20000"
+    depends_on:
+      risk:
+        condition: service_healthy
+    volumes:
+      - actor-credential:/actor-credential:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    environment:
+      SAAC_ACTOR_TOKEN_FILE: ""
+    entrypoint: ["/bin/sh", "-c"]
+    command: ['SAAC_ACTOR_TOKEN="$$(cat /actor-credential/actor.token)" exec python -m saac.actor --url http://risk:8000']
+volumes:
+  risk-state:
+  actor-credential:

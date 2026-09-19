@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: govern-the-rail
+    runtime: docker
+    plan: free
+    region: virginia
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: sh /app/render_start.sh
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: SAAC_PORT
+        value: "10000"
+      - key: SAAC_PUBLIC_DEMO
+        value: "1"
+      - key: SAAC_DEMO_LIFETIME_SECONDS
+        value: "1800"
+      - key: SAAC_DEMO_MAX_SESSIONS
+        value: "4"
+      - key: SAAC_DEMO_CONCURRENT_JOBS
+        value: "1"

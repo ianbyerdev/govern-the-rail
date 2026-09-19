@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.runtime/
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+*.sqlite*
+frontend/.test-token
+frontend/tsconfig.tsbuildinfo
+frontend/playwright-report/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.token
+.DS_Store
+
+# Local-only working material
+/.local-notes/
