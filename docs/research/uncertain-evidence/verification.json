@@ -1,0 +1,53 @@
+{
+  "valid": true,
+  "negative_control_detected": true,
+  "conformance": {
+    "evidence": {
+      "valid": true,
+      "events": 652,
+      "decisions_replayed": 116,
+      "capabilities_verified": 16,
+      "receipts_verified": 26,
+      "head": "sha256:547a7efb71ad178b545828c3fdbfd6a66862e7017157a7ec658805c4adde71f1",
+      "used_cents": 0,
+      "reserved_cents": 0,
+      "budgets": {
+        "notional_usd_cents": {
+          "used": 400,
+          "reserved": 0
+        }
+      },
+      "unresolved": [],
+      "external_checkpoint": "Not externally anchored; a local chain alone cannot prove absence of truncation."
+    },
+    "timeout": {
+      "valid": false,
+      "code": "EXPERIMENT_INVALID_TIMEOUT_RELEASE",
+      "message": "Deliberately invalid release is never certified as normal conformance.",
+      "ordinary_tape": {
+        "valid": false,
+        "code": "TAPE_ACCOUNTING",
+        "message": "Admission counters differ from reconstructed authoritative allocations."
+      }
+    }
+  },
+  "completed_stages": [
+    "admission",
+    "hidden_fills",
+    "deadline",
+    "second_batch",
+    "recovered_fills",
+    "cancellations"
+  ],
+  "checks": {
+    "hash_chains_and_frame_boundaries": true,
+    "all_capability_and_receipt_signatures": true,
+    "atomic_admission_and_exact_execution_bindings": true,
+    "nonce_single_use_and_closure": true,
+    "independent_authority_reconstruction": true,
+    "independent_rail_observer_reconstruction": true,
+    "all_dashboard_frames_and_final_journals": true,
+    "expected_completed_stage_outcomes": true
+  },
+  "trust": "The supplied public keys, local history and synthetic rail are fixture trust roots. No external checkpoint, external audit, production broker behavior or distributed deployment is attested."
+}

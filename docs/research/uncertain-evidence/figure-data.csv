@@ -1,0 +1,13 @@
+stage,policy,virtual_time,available,consumed,limit,reserved,executed_units,working_units,obligation_units,outstanding_promises,total_commitment_units,breach_units,unaccounted_units
+admission,evidence,1800000000,0,0,10,10,0,0,0,10,10,0,0
+admission,timeout,1800000000,0,0,10,10,0,0,0,10,10,0,0
+hidden_fills,evidence,1800000001,0,0,10,10,4,6,10,0,10,0,0
+hidden_fills,timeout,1800000001,0,0,10,10,4,6,10,0,10,0,0
+deadline,evidence,1800000061,0,0,10,10,4,6,10,0,10,0,0
+deadline,timeout,1800000061,10,0,10,0,4,6,10,0,10,0,10
+second_batch,evidence,1800000062,0,0,10,10,4,6,10,0,10,0,0
+second_batch,timeout,1800000062,0,0,10,10,4,16,20,0,20,10,10
+recovered_fills,evidence,1800000063,0,4,10,6,4,6,10,0,10,0,0
+recovered_fills,timeout,1800000063,0,0,10,10,4,16,20,0,20,10,10
+cancellations,evidence,1800000064,6,4,10,0,4,0,4,0,4,0,0
+cancellations,timeout,1800000064,0,0,10,10,4,10,14,0,14,4,4
