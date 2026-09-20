@@ -15,7 +15,9 @@ async function create(
   posture = "full",
   mode = "replay",
 ) {
-  await page.getByLabel("Scenario", { exact: true }).selectOption(scenario);
+  await page
+    .getByRole("combobox", { name: "Scenario", exact: true })
+    .selectOption(scenario);
   await page.getByLabel("Logical population").selectOption(count);
   await page.getByLabel("Coverage posture").selectOption(posture);
   await page.getByLabel("Execution mode").selectOption(mode);
