@@ -65,6 +65,12 @@ class ExperimentStore:
         self.directory.mkdir(exist_ok=True)
         self.lock = Lock()
 
+    def book_count(self):
+        # A matched uncertainty comparison consumes two of the same public book
+        # quota; separate namespaces must not bypass workspace resource limits.
+        return (len(list(self.directory.glob('book_*'))) +
+                2 * len(list((self.directory.parent / 'uncertain').glob('uncertain_*'))))
+
     def get(self, book_id):
         if book_id == 'main': return self.main
         require(bool(re.fullmatch(r'book_[a-f0-9]{16}', book_id)), 'BOOK_ID', 'Invalid experiment identifier.')
@@ -75,7 +81,7 @@ class ExperimentStore:
     def create(self, profile):
         require(profile in WORKBENCH_PROFILES, 'PROFILE', 'Unknown domain profile.')
         with self.lock:
-            if self.demo and len(list(self.directory.glob('book_*'))) >= self.demo.manager.limits.books:
+            if self.demo and self.book_count() >= self.demo.manager.limits.books:
                 from .public_demo import refuse
                 refuse('DEMO_BOOK_LIMIT', 'This demo has reached its experiment limit. Export your evidence and end the demo.')
             book_id = uid('book')
@@ -289,3 +295,5 @@ def register(app, directory, main, operator, ApprovalRequest, ClockRequest, Brea
     def probes(book_id: str, request: ProbeRequest, store=Depends(select_store)):
         svc = store.get(book_id); result = probe(svc, request.probe)
         return bundle(book_id, svc, result.get('run'), probe=result)
+
+    return default_store

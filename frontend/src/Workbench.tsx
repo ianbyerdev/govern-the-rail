@@ -50,10 +50,12 @@ export function Workbench({
   access,
   onLogout,
   onOpenSwarm,
+  onOpenUncertain,
 }: {
   access: Access;
   onLogout: () => void;
   onOpenSwarm: () => void;
+  onOpenUncertain: () => void;
 }) {
   const prefix =
     access.mode === "visitor"
@@ -475,6 +477,9 @@ export function Workbench({
         })}
         <button onClick={onOpenSwarm}>
           <GitBranch size={17} /> Incident / Swarm Lab
+        </button>
+        <button onClick={onOpenUncertain}>
+          <ShieldCheck size={17} /> Missing receipt experiment
         </button>
       </nav>
       <main className="workbench-main">

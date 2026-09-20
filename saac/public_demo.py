@@ -379,4 +379,6 @@ def register(app, directory, approval, clock_request, breaker, limits=None):
     workbench(app, directory, None, demo_workspace, approval, clock_request, breaker,
               prefix=PREFIX + '/workbench', store_dependency=demo_experiments)
     swarm(app, directory, demo_workspace, prefix=PREFIX + '/swarm', store_dependency=demo_campaigns)
+    from .uncertain_api import register as uncertain
+    uncertain(app, demo_workspace, demo_experiments, prefix=PREFIX + '/uncertain')
     return manager

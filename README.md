@@ -133,6 +133,14 @@ manifests and consent changes, contained jobs, and the **Incident / Swarm Lab**.
 The latter retains its source-labeled counterfactuals, 100/1,200/5,000 logical actors
 and separate 2–8-process containment proof.
 
+The dashboard also includes **A missing receipt does not create capacity**: a
+matched experiment where both policies atomically admit 10 of 100 requests, but
+an intentionally incorrect timeout release lets a second batch raise modeled
+obligations to 20 against a ceiling of 10. Follow the steps through withheld fill
+receipts and confirmed cancellation, or run the comparison in one click.
+See the [experiment guide and local reproduction](docs/UNCERTAIN_EXECUTION.md).
+`make reproduce-uncertain` generates verified evidence and runs both test suites.
+
 ## Integrate an application
 
 `saac/sdk.py` contains no policy engine, ledger, signing key or effect implementation.

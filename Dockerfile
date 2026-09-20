@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r requirements.lock . \
     && mkdir -p /state /actor-credential \
     && chown 10001:20000 /state /actor-credential
 COPY --from=frontend /app/frontend/dist ./frontend/dist
+COPY docs/UNCERTAIN_EXECUTION.md ./docs/UNCERTAIN_EXECUTION.md
 COPY scripts/render_start.sh ./render_start.sh
 USER 10001:20000
 ENV SAAC_DATA_DIR=/state SAAC_HOST=0.0.0.0 SAAC_ACTOR_TOKEN_FILE=/actor-credential/actor.token

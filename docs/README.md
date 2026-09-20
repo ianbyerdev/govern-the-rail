@@ -13,6 +13,7 @@ effects to make its authority boundaries and limitations inspectable.
 | [Architecture](ARCHITECTURE.md) | Agent, authority and protected rail boundaries; capabilities and reconciliation |
 | [Demo walkthrough](DEMO_GUIDE.md) | Payments, trading, referrals and contained execution |
 | [Swarm walkthrough](SWARM_DEMO_GUIDE.md) | Shared capacity, delegation and concurrent agents |
+| [Uncertain execution experiment](UNCERTAIN_EXECUTION.md) | Missing receipts, false timeout capacity, recovery and reproducible evidence |
 | [Public demo hosting](PUBLIC_DEMO.md) | Visitor isolation, expiry, limits and hosting configuration |
 | [Threat model](THREAT_MODEL.md) | Enforced properties, assumptions and remaining demo shortcuts |
 | [Executable specification](SPEC.md) | The contract implemented by the common core |

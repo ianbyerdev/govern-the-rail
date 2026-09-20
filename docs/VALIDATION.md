@@ -7,6 +7,12 @@ make test
 make test-ui
 ```
 
+For the uncertainty experiment, `make reproduce-uncertain` executes the scenario,
+checks the evidence independently, and records both suites with test identifiers,
+runtime/source provenance, figure data and actual desktop/mobile screenshots.
+See [the uncertainty guide](UNCERTAIN_EXECUTION.md). An unsafe-control breach is
+an expected experimental finding, never normal conformance success.
+
 The backend suite exercises exact-effect binding, tampering, expiry, audience,
 replay, live reservations, delegation narrowing, concurrent admission, durable
 retries, signed receipts and reconciliation across service restarts. The browser

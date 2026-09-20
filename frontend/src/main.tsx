@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { Layers3, ArrowRight, ShieldCheck, Users, Clock3 } from "lucide-react";
 import { SwarmLab } from "./SwarmLab";
 import { Workbench } from "./Workbench";
+import { UncertainLab } from "./UncertainLab";
 import { request, type Access } from "./access";
 import "./style.css";
 
@@ -14,8 +15,8 @@ if (incoming) {
 
 function App() {
   const [access, setAccess] = useState<Access | null>(null);
-  const [swarm, setSwarm] = useState(
-    sessionStorage.getItem("saac-workspace") === "swarm",
+  const [workspace, setWorkspace] = useState(
+    sessionStorage.getItem("saac-workspace") || "rails",
   );
   const [busy, setBusy] = useState("Connecting"),
     [error, setError] = useState("");
@@ -25,9 +26,9 @@ function App() {
     [minutes, setMinutes] = useState(60);
   const [duration, setDuration] = useState(60);
 
-  function showSwarm(value: boolean) {
-    sessionStorage.setItem("saac-workspace", value ? "swarm" : "rails");
-    setSwarm(value);
+  function showWorkspace(value: string) {
+    sessionStorage.setItem("saac-workspace", value);
+    setWorkspace(value);
   }
 
   function enter(value: Access) {
@@ -37,9 +38,14 @@ function App() {
       previousOwner !== identity &&
       !(previousOwner === null && value.mode === "operator")
     ) {
-      for (const key of ["saac-book", "saac-campaign", "saac-workspace"])
+      for (const key of [
+        "saac-book",
+        "saac-campaign",
+        "saac-workspace",
+        "saac-uncertain",
+      ])
         sessionStorage.removeItem(key);
-      setSwarm(false);
+      setWorkspace("rails");
     }
     sessionStorage.setItem("saac-workspace-owner", identity);
     setAccess(value);
@@ -170,12 +176,15 @@ function App() {
           </button>
           {error && <span role="alert">{error}</span>}
         </div>
-        {swarm ? (
-          <SwarmLab access={access} onBack={() => showSwarm(false)} />
+        {workspace === "uncertain" ? (
+          <UncertainLab access={access} onBack={() => showWorkspace("rails")} />
+        ) : workspace === "swarm" ? (
+          <SwarmLab access={access} onBack={() => showWorkspace("rails")} />
         ) : (
           <Workbench
             access={access}
-            onOpenSwarm={() => showSwarm(true)}
+            onOpenSwarm={() => showWorkspace("swarm")}
+            onOpenUncertain={() => showWorkspace("uncertain")}
             onLogout={end}
           />
         )}
@@ -234,7 +243,8 @@ function App() {
               <span>
                 <Clock3 size={19} />
                 <strong>{duration}-minute session</strong>Export evidence you
-                want to keep. Temporary data is cleared on expiry or a host reset.
+                want to keep. Temporary data is cleared on expiry or a host
+                reset.
               </span>
             </div>
           </>

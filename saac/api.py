@@ -232,7 +232,9 @@ def create_app(directory=None, service=None, *, demo_limits=None):
         return {"run": lab_svc.get_run(run_id), "view": lab_svc.view()}
 
     from .workbench import register
-    register(app, directory, svc, operator, ApprovalRequest, ClockRequest, BreakerRequest)
+    experiment_store = register(app, directory, svc, operator, ApprovalRequest, ClockRequest, BreakerRequest)
+    from .uncertain_api import register as register_uncertain
+    register_uncertain(app, operator, lambda: experiment_store)
 
     from .swarm.api import register as register_swarm
     register_swarm(app, directory, operator)
@@ -242,6 +244,11 @@ def create_app(directory=None, service=None, *, demo_limits=None):
         register_public(app, directory, ApprovalRequest, ClockRequest, BreakerRequest, limits=demo_limits)
 
     frontend = Path(__file__).resolve().parent.parent / "frontend/dist"
+    @app.get('/docs/uncertain-execution')
+    def uncertainty_guide():
+        return FileResponse(Path(__file__).resolve().parent.parent / 'docs/UNCERTAIN_EXECUTION.md',
+                            media_type='text/plain; charset=utf-8')
+
     if frontend.exists():
         app.mount("/assets", StaticFiles(directory=frontend / "assets"), name="assets")
         @app.get("/")
