@@ -17,4 +17,14 @@ jobs:
       - run: make install
       - run: make test
       - run: make build
-      - run: cd frontend && npx playwright install --with-deps chromium && npm test
+      - run: cd frontend && npx playwright install --with-deps chromium
+      - name: Browser tests
+        timeout-minutes: 10
+        run: cd frontend && npm test -- --reporter=list --max-failures=1
+      - name: Preserve browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-test-results
+          path: frontend/test-results/
+          retention-days: 7
