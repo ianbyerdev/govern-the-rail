@@ -22,6 +22,37 @@ test("authorization retry retains one capability and cannot execute twice", asyn
   await expect(page.locator(".lifecycle-inspector")).toContainText("saac-kappa");
 });
 
+test("lifecycle inspection waits for the new experiment to finish loading", async ({
+  page,
+}) => {
+  const normal = page.getByRole("button", {
+    name: "Normal authorized action", exact: true,
+  });
+  await normal.click();
+  await expect(normal).toBeEnabled();
+  const issued = page.getByRole("button", { name: "✓ κ ISSUED", exact: true });
+  await expect(issued).toBeEnabled();
+
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route("**/demonstrations/**", async (route) => {
+    await held;
+    await route.continue();
+  });
+  try {
+    await normal.click();
+    await expect(normal).toBeDisabled();
+    await expect(issued).toBeDisabled();
+  } finally {
+    release();
+  }
+  await expect(normal).toBeEnabled();
+  await issued.click();
+  await expect(page.locator(".lifecycle-inspector")).toContainText("kappa_id");
+});
+
 for (const mode of ["native", "harness", "mcp"]) {
   test(`${mode} integration completes every recorded lifecycle stage`, async ({
     page,

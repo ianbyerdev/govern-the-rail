@@ -13,7 +13,11 @@ const stages = [
   ["RECONCILED", "RECEIPT_RECONCILED", "authority"],
 ];
 
-export function Lifecycle({ run, view }: { run: Run | null; view: Json }) {
+export function Lifecycle({ run, view, busy }: {
+  run: Run | null;
+  view: Json;
+  busy: boolean;
+}) {
   const [selected, setSelected] = useState<string | null>(null);
   const events = run?.events || [];
   const event = events.filter((e) => e.kind === selected).at(-1);
@@ -22,14 +26,14 @@ export function Lifecycle({ run, view }: { run: Run | null; view: Json }) {
   );
   const grant = view.grants.find((g: Json) => g.id === run?.proposal.grant_id);
   return (
-    <section className="lifecycle" aria-label="SAAC lifecycle">
+    <section className="lifecycle" aria-label="SAAC lifecycle" aria-busy={busy}>
       <div className="lifecycle-stages">
         {stages.map(([label, kind, owner]) => {
           const recorded = events.some((e) => e.kind === kind);
           return (
             <button
               key={kind}
-              disabled={!recorded}
+              disabled={busy || !recorded}
               aria-pressed={selected === kind}
               className={`${owner} ${recorded ? "recorded" : ""}`}
               onClick={() => setSelected(selected === kind ? null : kind)}

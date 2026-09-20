@@ -584,6 +584,7 @@ export function Workbench({
           key={`lifecycle:${book}:${run?.id || "none"}`}
           run={run}
           view={view}
+          busy={!!busy}
         />
         <div className="ownership-grid">
           <section className="owner-lane actor-lane" aria-label="Actor book">
