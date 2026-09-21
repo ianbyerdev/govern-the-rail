@@ -56,6 +56,27 @@ private key is served, and the actor API never returns the stored pack or tape.
 
 ## Explicit non-claims
 
+The [C8–C10 coverage schedules](COVERAGE_SCHEDULES.md) include intentionally unsafe
+controls: unsupported timeout release, revoke-as-release, and independent local
+limits without a common downstream allocation. These are fixed institutional
+experiments, inaccessible to actor credentials. Their ordinary conformance must
+fail even when the experiment verifier successfully detects the intended breach.
+The evaluator may read hidden rail outcomes to reconstruct obligation, but such
+reads are never accepted evidence or authority to release reservations.
+
+C8 separates processes, SQLite stores, writer connections and transactions on
+one trusted host. It does not establish isolation against same-user host code,
+distributed exactly-once behavior, production exchange connectivity or general
+partition/replica safety. Public visitor routes explicitly reject C8 execution;
+they accept no command, executable, filesystem path or process configuration.
+C9/C10 remain bounded synthetic in-process schedules in visitor-owned workspaces.
+The API shares existing action/storage/book quotas and heavy-job limits.
+
+Signed histories, lifecycle joins and replayed accounting detect tampering within
+an exported evidence history. Replacing the entire unanchored history and its
+verification keys remains outside this guarantee. Source provenance is reported
+separately; a local observation is not production certification.
+
 This fixture does not protect a host from malicious same-user Python code. Use
 the separate container to demonstrate lack of actor filesystem access; it still
 does not prove a hardened sandbox against kernel escape. The shared trusted

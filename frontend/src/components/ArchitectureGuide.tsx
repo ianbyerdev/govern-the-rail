@@ -16,7 +16,7 @@ export function IntegrationChoice({
       aria-label="Integration architecture"
     >
       <div>
-        <strong>The agent proposes. SAAC authorizes. The rail enforces.</strong>
+        <strong>The actor proposes. The RISC Runtime authorizes. The RISC Gateway enforces.</strong>
         <p>
           Adapters may live in the harness. Authority lives outside the agent
           trust boundary.
@@ -30,9 +30,9 @@ export function IntegrationChoice({
                 : "Agent → MCP-style tool → SAAC adapter"}
           </span>
           <b>→</b>
-          <span>SAAC authority → κ</span>
+          <span>RISC Runtime · institutional authority book → κ</span>
           <b>→</b>
-          <span>Protected rail → ρ → reconciliation</span>
+          <span>RISC Gateway · protected rail → ρ → Runtime reconciliation</span>
         </div>
       </div>
       <label>

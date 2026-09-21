@@ -68,8 +68,12 @@ class ExperimentStore:
     def book_count(self):
         # A matched uncertainty comparison consumes two of the same public book
         # quota; separate namespaces must not bypass workspace resource limits.
+        import json
+        coverage_books = sum(json.loads(record.read_text())['book_cost'] for record in
+                             (self.directory.parent / 'coverage').glob('coverage_*/request.json'))
         return (len(list(self.directory.glob('book_*'))) +
-                2 * len(list((self.directory.parent / 'uncertain').glob('uncertain_*'))))
+                2 * len(list((self.directory.parent / 'uncertain').glob('uncertain_*'))) +
+                coverage_books)
 
     def get(self, book_id):
         if book_id == 'main': return self.main

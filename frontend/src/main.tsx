@@ -4,6 +4,7 @@ import { Layers3, ArrowRight, ShieldCheck, Users, Clock3 } from "lucide-react";
 import { SwarmLab } from "./SwarmLab";
 import { Workbench } from "./Workbench";
 import { UncertainLab } from "./UncertainLab";
+import { CoverageLab } from "./CoverageLab";
 import { request, type Access } from "./access";
 import "./style.css";
 
@@ -176,7 +177,9 @@ function App() {
           </button>
           {error && <span role="alert">{error}</span>}
         </div>
-        {workspace === "uncertain" ? (
+        {workspace === "coverage" ? (
+          <CoverageLab access={access} onBack={() => showWorkspace("rails")} />
+        ) : workspace === "uncertain" ? (
           <UncertainLab access={access} onBack={() => showWorkspace("rails")} />
         ) : workspace === "swarm" ? (
           <SwarmLab access={access} onBack={() => showWorkspace("rails")} />
@@ -185,6 +188,7 @@ function App() {
             access={access}
             onOpenSwarm={() => showWorkspace("swarm")}
             onOpenUncertain={() => showWorkspace("uncertain")}
+            onOpenCoverage={() => showWorkspace("coverage")}
             onLogout={end}
           />
         )}
@@ -197,10 +201,10 @@ function App() {
         <div className="entry-mark">
           <Layers3 size={32} />
         </div>
-        <div className="eyebrow">Shared Agent Authority Contract</div>
+        <div className="eyebrow">Agentic RISC · Independent institutional controls</div>
         <h1>Govern The Rail Lab</h1>
         <p className="entry-intro">
-          The agent proposes. SAAC authorizes. The rail enforces.
+          The actor proposes. The RISC Runtime authorizes. The RISC Gateway enforces.
         </p>
         <p>
           Try a payment, challenge the boundary, or launch 100 agents against

@@ -5,10 +5,24 @@ cannot access the operator credential, policy, keys or reservation ledger. All
 business resources are synthetic. The runtime executes one fixed script inside
 Bubblewrap on Linux; it contacts no external service.
 
-The three columns show: **Actor book → Risk book → Protected
-socket**. The receipt arrow returns to the risk book. The selected experiment
+The three columns show: **Actor environment → RISC Runtime / institutional
+authority book → RISC Gateway / protected rail**. Accepted outcomes return to
+the Runtime. The selected experiment
 identifier and current live pack stay visible. **Fresh experiment** creates a
 separate book; the selector retains earlier experiment books. Changing a domain reopens its latest experiment, not a new risk allowance.
+
+For the v3.9 extensions, open **Coverage schedules C8–C10**. The architecture view
+explains how independent controls permit broader delegation while the institution
+keeps authority over limits. Choose a case and **Run schedule** to execute the
+backend; **Step replay** then inspects recorded checkpoints without executing new
+work. C8 survives a Runtime process restart, C9 retains a revoked parent's accepted
+child occupancy, and C10 compares three independent configurations sharing one
+downstream ceiling. Inspect both green local books and red shared-scope failures,
+then export the evidence. The unsafe branch's failed ordinary conformance and the
+experiment's successful breach detection are different results. Expected checkpoint
+tables remain specifications. A fresh unpinned observation is labeled as such.
+Public visitors can run bounded C9/C10; C8 is local operator only. See the
+[coverage guide](COVERAGE_SCHEDULES.md) for reproduction and remaining simulations.
 
 ## 0:00 — A proposal, a verdict, then authority
 

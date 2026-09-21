@@ -34,7 +34,7 @@ def provenance():
     # tests and public documentation. Do not enumerate private local material.
     paths = ['saac', 'scripts', 'tests', 'frontend/src', 'frontend/tests', 'docs',
              'pyproject.toml', 'requirements.lock', 'frontend/package.json',
-             'frontend/package-lock.json', 'frontend/playwright.config.ts',
+             'frontend/package-lock.json', 'frontend/index.html', 'frontend/playwright.config.ts',
              'frontend/vite.config.ts', 'frontend/tsconfig.json', 'README.md',
              'Dockerfile', 'Makefile', 'render.yaml', 'compose.yaml', '.dockerignore', '.github']
     status = command('git', 'status', '--porcelain', '--untracked-files=all', '--', *paths)
@@ -44,7 +44,7 @@ def provenance():
                        ((ROOT / item).rglob('*') if (ROOT / item).is_dir() else [ROOT / item])
                        if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc'):
         # Stored evidence is a later artifact, not a change to executable source.
-        if 'uncertain-evidence' in path.parts:
+        if 'uncertain-evidence' in path.parts or 'coverage-evidence' in path.parts:
             continue
         digest.update(path.relative_to(ROOT).as_posix().encode() + b'\0' + path.read_bytes())
     packages = {}

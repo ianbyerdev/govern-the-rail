@@ -1,6 +1,6 @@
 PYTHON ?= python3
 PORT ?= 8000
-.PHONY: demo install build test test-ui actor clean-data reproduce-uncertain
+.PHONY: demo install build test test-ui actor clean-data reproduce-uncertain reproduce-coverage
 
 .venv/.installed: pyproject.toml requirements.lock
 	$(PYTHON) -m venv .venv
@@ -28,6 +28,10 @@ test-ui: install build
 reproduce-uncertain: install
 	cd frontend && npx playwright install chromium
 	.venv/bin/python scripts/reproduce_uncertain.py --checks all
+
+reproduce-coverage: install
+	cd frontend && npx playwright install chromium
+	.venv/bin/python scripts/reproduce_coverage.py --checks all
 
 actor: .venv/.installed
 	SAAC_ACTOR_TOKEN="$$(cat .runtime/actor.token)" .venv/bin/python -m saac.actor --url http://127.0.0.1:$(PORT)

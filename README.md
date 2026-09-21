@@ -1,13 +1,14 @@
-# SAAC · Govern The Rail Lab
+# Agentic RISC · Govern The Rail Lab
 
-**The agent proposes. SAAC authorizes. The rail enforces.**
+**The actor proposes. The RISC Runtime authorizes. The RISC Gateway enforces.**
 
 **[Explore the live demo](https://govern-the-rail.onrender.com/)** — no account
 needed. Free hosting may take about a minute to wake up after inactivity.
 
-A local reference demo for Ian Byer’s paper, *Govern the Rail, Not the Brain:
-Shared Agent Authority Contracts for Concurrent AI Systems*. Payments, trading, synthetic patient referrals, contained scripts and
-incident/swarm scenarios use **one SAAC core with domain packs**. All effects are
+A local reference demo for Ian Byer’s practitioner-led *Agentic RISC* architecture.
+Independent institutional controls permit agents to choose actions without
+choosing their own limits. Payments, trading, synthetic patient referrals, contained scripts and
+incident/swarm scenarios use **one Runtime/Gateway core with domain packs**. All effects are
 local fixtures; no real funds, patient data, cloud credentials or model API are used.
 
 **Adapters may live in the harness. Authority lives outside the agent trust boundary.**
@@ -63,19 +64,19 @@ Use `make demo PORT=8001` for another port. For a separate data directory:
 
 ```mermaid
 flowchart TD
-  subgraph A[Agent / harness trust domain]
+  subgraph A[Actor environment: agent / harness trust domain]
     M[Agent / Model] --> H[Harness / App]
     H --> SDK[SAAC SDK / Adapter\nNative · agent tool · MCP-style]
   end
-  subgraph B[SAAC authority domain]
+  subgraph B[RISC Runtime]
     AUTH[Authority service\nResolve + policy + atomic CHECK / RESERVE]
-    BOOK[(Shared risk book\nGrants · versions · reservations · nonces)]
+    BOOK[(Institutional authority book\nGrants · versions · reservations · nonces)]
     AUTH <--> BOOK
     REC[Receipt verification / reconciliation] --> BOOK
   end
   SDK -->|proposed action| AUTH
   AUTH -->|signed exact-effect κ, forwarded by adapter| RAIL
-  subgraph C[Protected execution rail]
+  subgraph C[RISC Gateway / protected execution rail]
     RAIL[Independent κ verification] --> EFFECT[Local consequential effect]
     EFFECT --> RECEIPT[Durable signed receipt ρ]
   end
@@ -87,6 +88,11 @@ flowchart TD
 `SAACService` / FastAPI (`saacd` after installation). Agents consult its shared SQLite state, never an independent
 copy of remaining capacity. A transaction checks **used + reserved + proposed ≤
 limit**, reserves capacity and stores signed κ before returning it.
+
+An **Action Contract** is the linked effect, decision, reservation where needed,
+executable capability and accepted outcome lifecycle. It is not a fourth service.
+Existing `saac` package names, commands, API identifiers and signed artifact types
+remain compatible; reader-facing architecture labels do not rewrite historical tapes.
 
 κ binds a unique capability ID and nonce, principal/agent, grant lineage, exact
 canonical effect and parameters, policy hash, relevant state versions,
@@ -141,6 +147,22 @@ receipts and confirmed cancellation, or run the comparison in one click.
 See the [experiment guide and local reproduction](docs/UNCERTAIN_EXECUTION.md).
 `make reproduce-uncertain` generates verified evidence and runs both test suites.
 
+Choose **Coverage schedules C8–C10** for the v3.9 extensions: independent rail
+persistence across an actual Runtime process restart, parent revocation while a
+child occupies capacity, and two books sharing one downstream allocation. Each
+run executes a fixed backend schedule; **Step replay** then inspects its captured
+checkpoints. The dashboard separates local ledger compliance, obligation coverage,
+the true shared ceiling, ordinary conformance, and detection of deliberately unsafe
+controls. No observed values are displayed before execution. A clean source
+observation identifies its source commit; an uncommitted run stays labeled unpinned.
+The historical C1–C7 pin and test counts remain historical.
+
+`make reproduce-coverage` executes all three schedules and their checks. See the
+[coverage reproduction and evidence guide](docs/COVERAGE_SCHEDULES.md) for individual
+commands, evidence contents and limits. C8 runs only under the local operator
+profile. Public sessions support bounded C9/C10 schedules with existing isolation,
+book quotas and heavy-job controls; hosted C8 process execution is unsupported.
+
 ## Integrate an application
 
 `saac/sdk.py` contains no policy engine, ledger, signing key or effect implementation.
@@ -184,8 +206,10 @@ SAAC_ACTOR_TOKEN="$(cat .runtime/actor.token)" .venv/bin/python -m saac.actor --
 
 ## Boundaries and demo shortcuts
 
-Authority and executor are separate modules/key roles in one trusted service and
-share SQLite transactions. The dashboard is an institutional operator. Local
+The original domain profiles keep Runtime and Gateway modules/key roles in one
+trusted service with shared SQLite transactions. C8 additionally exercises separate
+same-host processes and independent stores; it does not establish remote production
+exchange behavior or host compromise resistance. The dashboard is an institutional operator. Local
 same-user development does not protect keys/database files from arbitrary code
 running as your OS user. The existing optional container setup isolates the actor
 UID/filesystem and mounts only its actor credential:

@@ -1,6 +1,6 @@
 # Architecture
 
-The agent proposes. SAAC authorizes. The rail enforces.
+The actor proposes. The RISC Runtime authorizes. The RISC Gateway enforces.
 Adapters may live in the harness. Authority lives outside the agent trust boundary.
 
 The public **Govern The Rail Lab** entry wraps these components in temporary
@@ -12,17 +12,17 @@ experiment retains one shared authority book for all of its agents. See
 
 ```mermaid
 flowchart LR
-  subgraph Actor[Agent / application trust domain]
+  subgraph Actor[Actor environment: agent / application trust domain]
     M[Model or native app] --> H[Harness / application]
     H --> SDK[SDK: native, agent-tool, MCP-style adapters]
   end
   SDK -->|structured intent| A
-  subgraph Authority[SAAC authority domain: trusted service]
-    A[Authority: resolve, check, reserve, sign] <--> B[(Shared RiskBook)]
+  subgraph Authority[RISC Runtime: trusted institutional service]
+    A[Authority: resolve, check, reserve, sign] <--> B[(Institutional authority book)]
     R[Verify receipt and reconcile] --> B
   end
   A -->|signed κ forwarded by SDK| E
-  subgraph Rail[Protected rail]
+  subgraph Rail[RISC Gateway / protected rail]
     E[Independent verification] --> F[Typed consequential effect]
     F --> P[Durable signed ρ]
   end
@@ -31,6 +31,13 @@ flowchart LR
 ```
 
 ## Integration boundary
+
+Agentic RISC names the architecture. An Action Contract is the linked effect,
+decision, reservation where required, executable capability and accepted outcome
+lifecycle, not another service. The Runtime owns the institutional authority book;
+an adapter carries authority but neither signs it nor maintains a competing budget
+or executes a protected effect directly. Legacy `saac` modules, CLI/API names and
+signed type/version identifiers remain compatible with historical artifacts.
 
 `SAACService` is the local authority host; `saacd` is its lightweight launcher.
 Artifact verification in `protocol.py` requires the exact signed type and checks
@@ -109,8 +116,36 @@ model tool. It may inspect policy and deliberately change trusted state.
 Core functions are directly available to unit tests. This does not imply they
 are exposed to actor clients. In local development the OS user remains trusted;
 Compose strengthens the filesystem boundary with separate UIDs and mounts.
-Risk issuer and protected socket share a trusted process but have separate modules
-and key roles. Compromise of that service is outside this toy's security claim.
+In the original domain profiles, risk issuer and protected socket share a trusted
+process but have separate modules and key roles. C8 uses a separate Runtime
+process/store A and Gateway/rail process/store B. Its trusted fixed-command IPC
+and durable redemption/non-use protocol are described in [REMOTE_RAIL_C8.md](REMOTE_RAIL_C8.md).
+Compromise of the trusted host or same-user control-plane identity is outside
+both profiles' security claim.
+
+## Coverage schedules and evidence scope
+
+[C8–C10](COVERAGE_SCHEDULES.md) extend the v3.9 evidence boundary without adding a
+new service role. C8 retains durable reservations through termination and restart
+of the actual Runtime process while the rail journal survives independently.
+C9 distinguishes revoked initiation rights from accepted historical occupancy;
+its competitor has an independently valid grant outside the revoked subtree, so
+the safe refusal demonstrates insufficient headroom. Institutional cleanup uses
+another valid grant. The unsafe branch retains rejected late signed evidence.
+
+C10 evaluates one typed downstream account against its true ceiling `L_star`.
+Two locally valid books do not create twice that allocation. The safe common
+reservation is acquired before local usable issuance; the split conserves six
+plus four rights under the same ceiling. Covering parents and local suballocations
+cover the same lifecycles and are not added as separate obligations.
+
+The read-only evaluator reconstructs `E` by joining issuance/redemption history
+to durable rail records. Before redemption it includes usable promises; after
+redemption it substitutes the accepted execution lifecycle. A rail-only journal
+cannot establish all `E` while promises remain outside it. Oracle observations
+are not accepted institutional receipts and cannot release Runtime capacity.
+The dashboard independently displays `U + Q <= L`, `E <= U + Q`, and for C10
+`E <= L_star`; it preserves negative headroom and historical unsafe failures.
 
 ## Exact objects
 

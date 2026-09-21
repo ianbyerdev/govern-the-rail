@@ -51,11 +51,13 @@ export function Workbench({
   onLogout,
   onOpenSwarm,
   onOpenUncertain,
+  onOpenCoverage,
 }: {
   access: Access;
   onLogout: () => void;
   onOpenSwarm: () => void;
   onOpenUncertain: () => void;
+  onOpenCoverage: () => void;
 }) {
   const prefix =
     access.mode === "visitor"
@@ -444,7 +446,7 @@ export function Workbench({
           <span>
             <Layers3 size={21} />
           </span>
-          <strong>SAAC</strong>
+          <strong>Agentic RISC</strong>
           <em>/ Govern The Rail Lab</em>
         </div>
         <div className="header-right">
@@ -481,11 +483,14 @@ export function Workbench({
         <button onClick={onOpenUncertain}>
           <ShieldCheck size={17} /> Missing receipt experiment
         </button>
+        <button onClick={onOpenCoverage}>
+          <ShieldCheck size={17} /> Coverage schedules C8–C10
+        </button>
       </nav>
       <main className="workbench-main">
         <div className="page-heading">
           <div>
-            <div className="eyebrow">SAAC · Authority in motion</div>
+            <div className="eyebrow">Agentic RISC · Authority in motion</div>
             <h1>{d.title}</h1>
             <p>{d.subtitle}</p>
           </div>
@@ -592,10 +597,10 @@ export function Workbench({
           busy={!!busy}
         />
         <div className="ownership-grid">
-          <section className="owner-lane actor-lane" aria-label="Actor book">
+          <section className="owner-lane actor-lane" aria-label="Actor environment">
             <div className="lane-heading">
               <div className="eyebrow">
-                01 / Agent &amp; harness trust domain
+                01 / Actor environment
               </div>
               <h2>Propose</h2>
               <span>Model + harness · snapshot →</span>
@@ -676,9 +681,9 @@ export function Workbench({
             aria-label="Institutional authority"
           >
             <div className="lane-heading">
-              <div className="eyebrow">02 / SAAC authority domain</div>
+              <div className="eyebrow">02 / RISC Runtime</div>
               <h2>Authorize</h2>
-              <span>Independent institution · κ → socket</span>
+              <span>Institutional authority book · κ → Gateway</span>
             </div>
             <div className="lane-body">
               <EffectCard effect={effect} review={approvedPending} />
@@ -771,7 +776,7 @@ export function Workbench({
             aria-label="Protected socket"
           >
             <div className="lane-heading">
-              <div className="eyebrow">03 / Protected execution rail</div>
+              <div className="eyebrow">03 / RISC Gateway</div>
               <h2>Enforce</h2>
               <span>{decision?.audience || d.audience} · protected socket</span>
             </div>
@@ -1247,7 +1252,7 @@ export function Workbench({
         )}
         <footer className="app-footer">
           <span>
-            SAAC · executable research fixture · synthetic resources only
+            Agentic RISC · executable research fixture · synthetic resources only
           </span>
           <span>
             Valid authority is a prerequisite for the protected effect.

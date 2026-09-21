@@ -13,6 +13,22 @@ runtime/source provenance, figure data and actual desktop/mobile screenshots.
 See [the uncertainty guide](UNCERTAIN_EXECUTION.md). An unsafe-control breach is
 an expected experimental finding, never normal conformance success.
 
+For v3.9 C8–C10 use `make reproduce-coverage`; see the
+[coverage schedules guide](COVERAGE_SCHEDULES.md) for case selection and the exact
+evidence layout. The process-restart, parent-revocation, and shared-allocation
+tests evaluate observed states against expected-only checkpoint data. The unsafe
+branches retain ordinary conformance failure and have a separate intended-breach
+detection result. No historical baseline test count is a target for a new run.
+
+`tests/test_coverage_api.py` checks actor/operator separation, strict fixed-schedule
+inputs, request-id recovery, visitor isolation, shared quotas and retained failed
+attempts using an explicitly labeled transport stub. It is not schedule evidence.
+`frontend/tests/coverage.spec.ts` executes real backend schedules and compares
+displayed observations with the actual API response, checks separate predicates
+and replay state, and captures desktop/mobile UI evidence. C8 is exercised only
+in the local operator profile; visitor tests assert its explicit refusal and
+run bounded C9/C10. Hosted provider deployment remains a separate check.
+
 The backend suite exercises exact-effect binding, tampering, expiry, audience,
 replay, live reservations, delegation narrowing, concurrent admission, durable
 retries, signed receipts and reconciliation across service restarts. The browser

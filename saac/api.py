@@ -235,6 +235,8 @@ def create_app(directory=None, service=None, *, demo_limits=None):
     experiment_store = register(app, directory, svc, operator, ApprovalRequest, ClockRequest, BreakerRequest)
     from .uncertain_api import register as register_uncertain
     register_uncertain(app, operator, lambda: experiment_store)
+    from .coverage_api import register as register_coverage
+    register_coverage(app, operator, lambda: experiment_store)
 
     from .swarm.api import register as register_swarm
     register_swarm(app, directory, operator)

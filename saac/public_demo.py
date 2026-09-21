@@ -381,4 +381,6 @@ def register(app, directory, approval, clock_request, breaker, limits=None):
     swarm(app, directory, demo_workspace, prefix=PREFIX + '/swarm', store_dependency=demo_campaigns)
     from .uncertain_api import register as uncertain
     uncertain(app, demo_workspace, demo_experiments, prefix=PREFIX + '/uncertain')
+    from .coverage_api import register as coverage
+    coverage(app, demo_workspace, demo_experiments, prefix=PREFIX + '/coverage')
     return manager

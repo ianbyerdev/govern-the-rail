@@ -36,9 +36,23 @@ Python workers or fixed runtime jobs. Job authorization, scope narrowing and
 unsigned-rail refusal remain inspectable; real process tests stay available in
 the administrator workspace.
 
+The **Coverage schedules C8–C10** dashboard runs fixed C9/C10 schedules inside
+the authenticated visitor's own workspace. It provides observed checkpoint replay
+and JSON evidence export. C9 consumes two experiment books; C10 consumes six
+across its three independent configurations. They share the existing book and
+heavy-job quotas, and each execution consumes one heavy-job allowance. Retrying
+the same request identifier returns the same run; it cannot produce a fresh
+allowance. Exports acquire a concurrent-work lease without consuming a start.
+C8 requires separate Runtime and rail processes and is explicitly unsupported
+for public visitors. The local operator can run that fixed fixture. No public
+route accepts shell commands, executable paths or process launch options.
+These API/browser checks establish bounded visitor behavior locally, not a claim
+that the updated code was deployed or tested on a particular hosted provider.
+
 ## Sessions and isolation
 
-- Routes under `/api/demo/workbench` and `/api/demo/swarm` use the same registered
+- Routes under `/api/demo/workbench`, `/api/demo/swarm`, `/api/demo/uncertain`,
+  and `/api/demo/coverage` use the same registered
   handlers as the operator dashboard, with a server-selected store dependency.
   A book ID, principal field, query parameter or header cannot select another
   visitor's directory.

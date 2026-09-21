@@ -19,9 +19,9 @@ test("public entry creates a private workspace without exposing credentials", as
   context,
 }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle("SAAC · Govern The Rail Lab");
+  await expect(page).toHaveTitle("Agentic RISC · Govern The Rail Lab");
   await expect(
-    page.getByText("Shared Agent Authority Contract", { exact: true }),
+    page.getByText("Agentic RISC · Independent institutional controls", { exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Start demo", exact: true }),

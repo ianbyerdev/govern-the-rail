@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
     page.getByRole("heading", { name: "Pay one exact beneficiary" }),
   ).toBeVisible();
   await expect(page.getByLabel("Integration mode")).toBeEnabled();
-  await expect(page).toHaveTitle(/SAAC/);
+  await expect(page).toHaveTitle(/Agentic RISC/);
 });
 
 test("authorization retry retains one capability and cannot execute twice", async ({ page }) => {
