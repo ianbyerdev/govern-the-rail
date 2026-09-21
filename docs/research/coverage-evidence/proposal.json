@@ -1,0 +1,49 @@
+{
+  "status": "proposed_not_applied_to_supplied_manuscript",
+  "baseline_name": "1-Agentic_RISC_v3.9_arxiv.tex",
+  "baseline_sha256": "e7105095b63dd0c02dc2b8f0aff676058e11199d0d0ffa42ac64bf12519475ca",
+  "executed_source": "f7d27db01702f61f1dca0fd12f59900ca030f8da",
+  "source_tree_sha256": "2cf1134745cd125d2f542897133c1ac51c03ffd761e7050bcfdc421b846381f1",
+  "local_evidence_archive_sha256": "d3555a0340b33c625900352dfdebe065233c1739b9e6ce63435a6883508d6878",
+  "backend_counts": {
+    "passed": 359,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser_counts": {
+    "expected": 39,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "unavailable": [
+    "Matching baseline PDF and accompanying expected-checkpoint JSON were not attached.",
+    "Remote publication and new CI verification unavailable: no Git push credentials.",
+    "Proposed TeX patch not compiled to PDF."
+  ],
+  "patch_validation": {
+    "checks": [
+      {
+        "command": [
+          "git",
+          "apply",
+          "--check",
+          "/home/ian/Projects/OAC/.runtime/coverage-paper-proposal/Agentic_RISC_v3.9_proposed_coverage.patch"
+        ],
+        "exit_code": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "git",
+          "apply",
+          "/home/ian/Projects/OAC/.runtime/coverage-paper-proposal/Agentic_RISC_v3.9_proposed_coverage.patch"
+        ],
+        "exit_code": 0,
+        "output": ""
+      }
+    ],
+    "applied_copy_matches_proposed_tex": true,
+    "supplied_manuscript_unchanged": true
+  }
+}

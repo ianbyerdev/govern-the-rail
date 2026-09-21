@@ -1,0 +1,43 @@
+{
+  "source_commit": "f7d27db01702f61f1dca0fd12f59900ca030f8da",
+  "source_clean_before_and_after": true,
+  "source_tree_sha256": "2cf1134745cd125d2f542897133c1ac51c03ffd761e7050bcfdc421b846381f1",
+  "image_id": "sha256:412e574338b91233ae7c2b8b15776bb438938bb2ab3ff528d7642a8eaff7ea3e",
+  "image_platform": "linux/amd64",
+  "container_user": "10001:20000",
+  "build_exit_code": 0,
+  "public_smoke_exit_code": 0,
+  "checks_passed": 43,
+  "checks_total": 43,
+  "http_requests": 23,
+  "exports_verified": {
+    "host": [
+      "C9",
+      "C10"
+    ],
+    "container": [
+      "C9",
+      "C10"
+    ]
+  },
+  "scope": "local Docker container/public profile",
+  "remote_hosted_provider_tested": false,
+  "C8_public": "unsupported; observed HTTP403",
+  "quota": "C9=2 books + C10=6 + 4 workbench books exhausts shared12; subsequent creation429, same request retry200",
+  "operator_token_read_or_used": false,
+  "credentials_exported": false,
+  "live_databases_exported": false,
+  "container_removed": true,
+  "startup_attempt": {
+    "exit_code": 1,
+    "http_assertions_started": 0,
+    "error": "Connection reset before server readiness",
+    "retained": "startup-attempt-result.json",
+    "resolution": "External GET / readiness gate; unchanged43-check smoke then passed"
+  },
+  "notes": [
+    "Container intentionally reports unavailable Git revision/dirty status; build manifest binds image ID to separately verified clean source commit.",
+    "No Render revision override or remote provider deployment was used.",
+    "Earlier4f5e3dc evidence retained unchanged; same packaged image content rebuilt from final source."
+  ]
+}

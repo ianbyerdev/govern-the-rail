@@ -1,0 +1,22 @@
+{
+  "Agentic_RISC_v3.9_proposed_coverage.patch": "98047efef93efd88d01d646357a733b45879f4e1f2f1a1ec0bf0846e6fc256ae",
+  "README.md": "90590bc7ff0c7bf387147de9abace525d497ebbcb7a8c31d8aea24f4462f5c0a",
+  "archive-verification.json": "bb4612260e645ac2d5eaf1221af213e87b3884375946c0a8862c511cf0feb40a",
+  "ci-result.json": "6e85ccdd707764d81d3c3337b3000a11146c142f2bbda9f0617e0c8a4744d99b",
+  "container-evidence.zip": "0f382e24c137e37927561aa0779f187ee2350169921a8582ec6b999dc584a192",
+  "container-summary.json": "1f79c5d020e0c6d409791b91a6ba6794ce09a18579b8f7902d4d04278f0eb3ae",
+  "coverage-c10-final.png": "8a706d41c4dc2453ac6f0eb2bc0cc1096dc9dda8ecf0caaf3ddb071bd0c49ade",
+  "coverage-c10-visitor-mobile.png": "274d4edd513fda055bcd34c8da72c981c8727c1fbf6febed6cb3fa5283116eaf",
+  "coverage-c8-second-batch.png": "7146d5dbf3a89822db24ba4618b0b9426057665843e71f0fb2c76a10984ee24a",
+  "coverage-c9-final.png": "60152b9465641a076c70f2bfbe425d9aed0e8b80475d47c9757476a1fa14ab00",
+  "coverage-c9-visitor-mobile.png": "582dc9cab4799ef65540e3a018f7b8a85c7dabbbc378ed8fea22f1a4f87dd118",
+  "coverage-evidence.zip": "d3555a0340b33c625900352dfdebe065233c1739b9e6ce63435a6883508d6878",
+  "earlier-browser-failure.zip": "72e50659b62a3bc860d68edcbf1910a26ef7268626e44eaf5b58f79438a98364",
+  "earlier-run-4f5e3dc.zip": "8ef3b8b63d91ef10f0202728623453d31a9e25d9568e6cb6ece513516e0856ea",
+  "proposal.json": "d287abbffd1e99db6588ef5576c8ac63ed69aaf57e2c5f9a6796642734568c20",
+  "run-history.json": "1ee601900aabfe03cd2a72cb0f066e0c990f93a4c1510691b6949cce705680de",
+  "source.json": "f2023488d35221e57c24342c94fc772478c60d4c33c1d2e30f42ea0e259fb27b",
+  "test-results.json": "d508d58a9e6dfcf4207e0ce32736a8beabff0069655910ea74eab75bb2976747",
+  "ui-review.json": "a390174735b84b2cac9612847c5139cd022560870c1d3b9ddcc32018297ee897",
+  "verification.json": "e56894289b3ec6118e91dd9f8734f430120fa19727b267b3556bc59723ffdc26"
+}

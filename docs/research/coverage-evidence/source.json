@@ -1,0 +1,60 @@
+{
+  "source_commit": "f7d27db01702f61f1dca0fd12f59900ca030f8da",
+  "source_origin": "git checkout",
+  "source_dirty": false,
+  "source_status": [],
+  "source_tree_sha256": "2cf1134745cd125d2f542897133c1ac51c03ffd761e7050bcfdc421b846381f1",
+  "source_status_scope": [
+    "saac",
+    "scripts",
+    "tests",
+    "frontend/src",
+    "frontend/tests",
+    "docs",
+    "pyproject.toml",
+    "requirements.lock",
+    "frontend/package.json",
+    "frontend/package-lock.json",
+    "frontend/index.html",
+    "frontend/playwright.config.ts",
+    "frontend/vite.config.ts",
+    "frontend/tsconfig.json",
+    "README.md",
+    "Dockerfile",
+    "Makefile",
+    "render.yaml",
+    "compose.yaml",
+    ".dockerignore",
+    ".github"
+  ],
+  "fingerprint_scope": "Available allowlisted fixture files; packaged images can omit tests, frontend sources and build configuration.",
+  "revision_claim": "Clean source checkout.",
+  "runtime": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "node": "v22.22.1",
+    "npm": "9.2.0",
+    "packages": {
+      "saac-reference": "0.1.0",
+      "fastapi": "0.141.1",
+      "pydantic": "2.13.5",
+      "cryptography": "50.0.1",
+      "httpx": "0.28.1",
+      "uvicorn": "0.53.0",
+      "pytest": "9.1.1"
+    },
+    "frontend_lock_versions": {
+      "react": "19.3.0",
+      "react-dom": "19.3.0",
+      "vite": "6.4.3",
+      "typescript": "5.9.3",
+      "@playwright/test": "1.63.0"
+    }
+  },
+  "os": {
+    "system": "Linux",
+    "release": "7.0.0-30-generic",
+    "machine": "x86_64"
+  },
+  "ci_run_url": null,
+  "secrets_exported": false
+}

@@ -1,0 +1,125 @@
+--- a/Agentic_RISC_v3.9_arxiv.tex
++++ b/Agentic_RISC_v3.9_arxiv.tex
+@@ -35,6 +35,7 @@
+ \newcommand{\repo}{https://github.com/ianbyerdev/govern-the-rail}
+ \newcommand{\pin}{https://github.com/ianbyerdev/govern-the-rail/tree/d71558e5df1623445ee54c83538e5f44cffd3d2d}
+ \newcommand{\pending}{\textbf{Specified; implementation pending.}}
++\newcommand{\coveragehash}{f7d27db01702f61f1dca0fd12f59900ca030f8da}
+ \newcommand{\lead}[1]{\par\noindent\textbf{#1}\ }
+ \begin{document}
+ \begin{center}
+@@ -54,12 +55,12 @@
+ 
+ We present Agentic RISC (Risk-Bounded Intent, Scope and Control), an implementation-neutral framework for institution-owned authority, shared accounting, enforceable execution boundaries, and reconciliation from accepted outcomes. Its Action Contract links a proposed effect to authorization, any required reservation, executable authority, and outcome evidence. A RISC Runtime maintains the authority book; a RISC Gateway enforces it at the protected effect boundary. The objective is broader delegation without allowing models, harnesses, or child agents to enlarge their own mandate.
+ 
+-For declared additive limits, actual consumed and outstanding obligations must remain covered by the book's charges, which must remain within the institution's ceiling. A pinned synthetic counterexample shows why atomic admission alone is insufficient: an unsupported timeout release allows obligations of twenty against a ceiling of ten, although the book reports ten. This supports the lifecycle requirement, not a production-performance claim. Three further conformance schedules are specified but not yet implemented. The contribution is a practitioner-led reference architecture and explicit coverage obligation, not a new authorization primitive, a universal risk measure, or a model-alignment method.
++For declared additive limits, actual consumed and outstanding obligations must remain covered by the book's charges, which must remain within the institution's ceiling. A pinned synthetic counterexample shows why atomic admission alone is insufficient: an unsupported timeout release allows obligations of twenty against a ceiling of ten, although the book reports ten. This supports the lifecycle requirement, not a production-performance claim. Three additional local conformance schedules test independently persisted rail execution across a Runtime restart, revocation during accepted child occupancy, and shared allocation across two books. The contribution is a practitioner-led reference architecture and explicit coverage obligation, not a new authorization primitive, a universal risk measure, or a model-alignment method.
+ \end{abstract}
+ \vspace{2pt}
+ {\small\textbf{Keywords:} Agentic RISC; Action Contracts; shared authority; agentic AI; runtime authorization; electronic-market risk controls; concurrent agents.\par
+ \textbf{Intended arXiv categories:} cs.CR (primary); cs.AI, cs.MA (cross-list).\par
+-\textbf{Artifacts:} \href{https://govern-the-rail.onrender.com/}{Interactive lab} $\cdot$ \href{\repo}{Source repository} $\cdot$ \href{\pin}{Pinned baseline: d71558e}. C8--C10 are pending and are not part of this evidence pin.}
++\textbf{Artifacts:} \href{https://govern-the-rail.onrender.com/}{Interactive lab} $\cdot$ \href{\repo}{Source repository} $\cdot$ \href{\pin}{Pinned baseline: d71558e}. C8--C10 have separate local evidence at source \texttt{\coveragehash}; they are not part of the baseline pin.}
+ 
+ \section{The institutional problem}
+ The control question for deployed agents is not only what a model can do. It is how much consequential authority an institution will permit, how concurrent actors share it, and who owns the state that answers those questions.
+@@ -72,7 +73,7 @@
+ 
+ \lead{The proposed boundary.} A \emph{rail} is a system through which a consequential effect becomes real: a payment processor, order interface, disclosure service, job launcher, or change-control endpoint. An \emph{authority book} is the institution's authoritative record of grants, limits, consumed capacity, and outstanding commitments. \emph{Headroom} is capacity not already consumed or committed. The book is not the agent's memory, a conversation transcript, or its estimate of what remains available.
+ 
+-Agentic RISC\footnote{No affiliation or interoperability with OpenID's Risk Incident Sharing and Coordination (RISC) profile~\cite{openid}, or with RISC-V, is implied. Here \emph{intent} means a proposed effect, not private reasoning.} organizes this separation into a reference architecture. Its contribution is the composition of independent authority ownership, shared-capacity accounting, effect-bound execution, and continuing responsibility for unresolved outcomes. The main text develops that argument and its deployment implications. Appendices retain the technical profile, conditional coverage argument, evidence register, and pending conformance schedules.
++Agentic RISC\footnote{No affiliation or interoperability with OpenID's Risk Incident Sharing and Coordination (RISC) profile~\cite{openid}, or with RISC-V, is implied. Here \emph{intent} means a proposed effect, not private reasoning.} organizes this separation into a reference architecture. Its contribution is the composition of independent authority ownership, shared-capacity accounting, effect-bound execution, and continuing responsibility for unresolved outcomes. The main text develops that argument and its deployment implications. Appendices retain the technical profile, conditional coverage argument, evidence register, and local conformance schedules.
+ 
+ \section{Five operating principles from electronic markets}
+ The point of the market reference is not to describe every agent effect as a trade. It is to identify operating responsibilities that remain necessary when many autonomous decision-makers can create obligations against the same institution.
+@@ -181,7 +182,7 @@
+ 
+ Two separately administered books can also draw on the same downstream capacity. If each believes it owns the full ten-unit allowance of one account, local correctness can coexist with twenty units of shared obligation. The remedy is one covering allocation or a conserved split, not necessarily one physical server. The shared obligation determines the accounting scope; the number of software deployments does not.
+ 
+-These are architectural requirements. The baseline tests grant attenuation and shared limits, but the stronger parent-revocation and two-book scenarios remain pending C9 and C10 schedules. They are not completed experiments in this draft.
++These are architectural requirements. The baseline tests grant attenuation and shared limits. Separate local C9 and C10 schedules now exercise parent revocation during accepted child occupancy and two books sharing one downstream allocation; their bounded evidence is recorded in Appendix~\ref{app:pending}.
+ 
+ \subsection{Change the effect, preserve the responsibilities}
+ The reference fixture contains synthetic order, payment, disclosure, and contained-job profiles~\cite{lab}. A new domain needs its own resolved effect, conservative capacity bound, enforceable refusal boundary, and accepted outcomes. ``Risk'' here does not imply that dollars, disclosed bytes, job starts, and safety harms are interchangeable.
+@@ -212,9 +213,9 @@
+ 
+ Coverage must include the paths that matter. Alternate credentials, background jobs, child spawning, and an overprivileged deputy can defeat a nominally protected route. An institution should be able to identify the exact paths it governs and the ordinary network, credential, and process controls that close alternatives. A component named RISC Gateway does not establish complete mediation by its name.
+ 
+-The current evidence is a Python reference fixture pinned to commit \texttt{d71558e}, with local effects and a trusted service that co-locates Runtime and Gateway~\cite{lab,ci}. It includes actual concurrent admission threads, retries, effect-binding checks, cumulative receipts, and the uncertain-execution counterexample. It uses no live funds, patient data, production credentials, or model API calls. The evaluator reconstructs modeled obligation from issuance and execution records without passing hidden outcomes to the Runtime. It is a fixture oracle, not an independent institutional witness. Appendix~\ref{app:evidence} distinguishes tested claims from coverage limits.
+-
+-Three further schedules are specified in Appendix~\ref{app:pending}: independently persisted rail execution and Runtime restart (C8), parent revocation during accepted child occupancy (C9), and two books sharing one downstream allocation (C10). \textbf{All three are pending implementation.} Expected checkpoints are conformance targets, not observations, and no implementing commit or new test count is claimed.
++The baseline evidence is a Python reference fixture pinned to commit \texttt{d71558e}, with local effects and a trusted service that co-locates Runtime and Gateway~\cite{lab,ci}. It includes actual concurrent admission threads, retries, effect-binding checks, cumulative receipts, and the uncertain-execution counterexample. It uses no live funds, patient data, production credentials, or model API calls. The evaluator reconstructs modeled obligation from issuance and execution records without passing hidden outcomes to the Runtime. It is a fixture oracle, not an independent institutional witness. Appendix~\ref{app:evidence} distinguishes tested claims from coverage limits.
++
++Three additional local schedules are implemented and recorded separately in Appendix~\ref{app:pending}: independently persisted rail execution and an actual Runtime process restart (C8), parent revocation during accepted child occupancy (C9), and two books sharing one downstream allocation (C10). Observed checkpoints match the specified targets. Each deliberately unsafe branch fails ordinary conformance, while the experiment verifier detects the intended failure. These results extend the local fixture evidence; they do not establish production integration, remote-host isolation, or an availability benefit.
+ 
+ \subsection{Safety needs an operational recovery path}
+ Holding unresolved commitments can strand capacity. Within one fixed accounting window, a missing response can leave two histories indistinguishable: the action never executed and cannot execute, or it executed but its receipt is missing. A deadline alone cannot tell the Runtime which history occurred. Reuse may be unsafe in the second; withholding may reduce availability in the first. An authoritative outcome query, confirmed cancellation, or atomic non-use closure can supply the missing distinction.
+@@ -390,7 +391,7 @@
+ C3 & Replay and settlement & Retries, cumulative receipts, reordering, non-use, missing receipts, timeout ablation. & Co-located local journals; no independent rail process is established. \\
+ C4 & Limit integrity & 100-thread admission, attenuating modify, shared collars. & Additive integer budgets; no portfolio netting. \\
+ C5 & Binding & Signature mutation, substitution, wrong audience, expiry, policy rollback. & Trusted local keys and specified resource bindings. \\
+-C6 & Delegation & Child scope, expiry, and per-effect ceiling expansion fail. & No funded subtree proof; revoke-in-flight C9 is pending. \\
++C6 & Delegation & Child scope, expiry, and per-effect ceiling expansion fail. & No funded subtree proof; C9 is outside this baseline evidence pin. \\
+ C7 & Canonicalization & Equivalent aliases resolve identically; rebinding invalidates authority. & Typed local resources, not general GUI or DNS grounding. \\
+ \bottomrule
+ \end{tabularx}
+@@ -419,18 +420,18 @@
+ 
+ \lead{Reproduction.} At the pinned source, \texttt{make test} runs the backend suite and \texttt{make reproduce-uncertain} generates and verifies the uncertain-execution evidence with the documented checks. The pinned guide records prerequisites, output layout, and the distinction between scenario-only and full-suite runs~\cite{experiment}. Compiling this document does not reproduce signed artifacts. A public demonstration may move independently of the pin; research claims belong to the recorded source and exported evidence, not the current website.
+ 
+-\section{Pending coverage-scope schedules: C8--C10}
++\section{Local coverage-scope schedules: C8--C10}
+ \label{app:pending}
+-\pending\ These schedules extend the evidence boundary; they add no new architecture role. Every number below is an expected checkpoint derived from a specified schedule, not an observed measurement. No implementing commit is assigned. A later evidence report must distinguish source version, actual outputs, ordinary conformance, and detection of the deliberate negative control.
++These schedules extend the local evidence boundary; they add no new architecture role. Source \texttt{\coveragehash} implements the three schedules. The tables below report observed local checkpoints, independently reconstructed from captured issuance and rail histories and compared against the separately retained expected-only targets. Ordinary conformance and detection of a deliberately unsafe control remain distinct results.
+ 
+ \subsection{C8: independently persisted rail and Runtime restart}
+ \label{app:c8}
+-\pending\ Store A holds the Runtime book. Store B holds an independently persisted Gateway/rail journal, with no shared writer or transaction. The Runtime and rail execute as separate processes; killing and restarting the Runtime must leave B intact. Sharing a database while reconstructing service objects does not satisfy this schedule. A same-host implementation would remain a local separated-process test, not a remote production rail.
++Store A holds the Runtime book. Store B holds an independently persisted Gateway/rail journal, with no shared writer or transaction. The Runtime and rail execute as separate processes; killing and restarting the Runtime must leave B intact. Sharing a database while reconstructing service objects does not satisfy this schedule. A same-host implementation would remain a local separated-process test, not a remote production rail.
+ 
+ Issue and redeem ten one-unit capabilities against $L=10$, persist their accepted effects in B, and drop outcome delivery before A applies it. Terminate and restart the Runtime from A. Preserve its ten-unit charge. Then submit ten \emph{new} identifiers. In the evidence branch all are denied; in the deliberately invalid branch, a timeout release on A admits a second ten, which must also be redeemed and durably accepted in B.
+ 
+ \begin{table}[htbp]
+-\caption{C8 expected checkpoints. Every contribution to $E$ at these checkpoints is already redeemed and durable in B. The table does not assert B-only observability of unredeemed promises.}
++\caption{C8 observed local checkpoints. Every contribution to $E$ at these checkpoints is already redeemed and durable in B. The table does not assert B-only observability of unredeemed promises.}
+ \label{tab:c8}
+ \small
+ \begin{tabularx}{\linewidth}{@{}Yccc@{}}
+@@ -451,12 +452,12 @@
+ 
+ \subsection{C9: parent revoke while a child occupies capacity}
+ \label{app:c9}
+-\pending\ An attenuated child of parent grant $G_p$ redeems an effect with bound six under a shared ceiling of ten. The rail accepts it. Revoke $G_p$ while that occupancy remains live. The child may not initiate new work under the revoked lineage, but its historical obligation remains charged.
++An attenuated child of parent grant $G_p$ redeems an effect with bound six under a shared ceiling of ten. The rail accepts it. Revoke $G_p$ while that occupancy remains live. The child may not initiate new work under the revoked lineage, but its historical obligation remains charged.
+ 
+ The competing six-unit request comes from an \emph{independently valid grant outside the revoked subtree}, drawing on the same allocation. This is essential: a descendant of the revoked parent could be denied for invalid lineage even if the accounting were wrong. Here the evidence branch must deny for insufficient headroom; the deliberately invalid revoke-as-release branch admits and redeems the competitor.
+ 
+ \begin{table}[htbp]
+-\caption{C9 expected checkpoints, $L=10$. The invalid branch preserves the baseline reconciler's rejection of late settlement against an improperly released reservation. Earlier breaches remain failures even if a separate repair experiment later restores aggregate coverage.}
++\caption{C9 observed local checkpoints, $L=10$. The invalid branch preserves the baseline reconciler's rejection of late settlement against an improperly released reservation. Earlier breaches remain failures even if a separate repair experiment later restores aggregate coverage.}
+ \label{tab:c9}
+ \small
+ \begin{tabularx}{\linewidth}{@{}Yccc@{}}
+@@ -477,12 +478,12 @@
+ 
+ \subsection{C10: two books sharing one downstream allocation}
+ \label{app:c10}
+-\pending\ Two Runtime books A and B address one downstream account with true ceiling $L^*=10$. The test compares three \emph{separate configurations}, not successive states of one experiment. In the invalid configuration, both local books are independently given a ten-unit ceiling without a common covering allocation. Each admits and redeems ten. The rail accepts twenty while each local book remains within its own ten.
++Two Runtime books A and B address one downstream account with true ceiling $L^*=10$. The test compares three \emph{separate configurations}, not successive states of one experiment. In the invalid configuration, both local books are independently given a ten-unit ceiling without a common covering allocation. Each admits and redeems ten. The rail accepts twenty while each local book remains within its own ten.
+ 
+ In a covering configuration, a shared parent reservation consumes the downstream allowance before a locally usable capability is issued; the first ten-unit request succeeds and the second fails. In a pre-split configuration, six rights are assigned to A and four to B. Each may use only its assigned rights. Reallocating unused rights requires a conservation-preserving transfer, not independently editing the two local ceilings.
+ 
+ \begin{table}[htbp]
+-\caption{C10 expected terminal checkpoints for separate configurations. No fills occur; admitted authority is redeemed and accepted. Local charges and parent allocations are views of the same covered lifecycles, not additive new obligations.}
++\caption{C10 observed local terminal checkpoints for separate configurations. No fills occur; admitted authority is redeemed and accepted. Local charges and parent allocations are views of the same covered lifecycles, not additive new obligations.}
+ \label{tab:c10}
+ \small
+ \begin{tabularx}{\linewidth}{@{}YcccY@{}}
+@@ -498,5 +499,5 @@
+ 
+ Before redemption, usable issued promises already contribute to total $E$ and must be reconstructed from issuance records. The table deliberately reports post-redemption checkpoints at which the rail journal carries the accepted obligations. The bad configuration must be flagged against the true shared ceiling, not ``passed'' by adding the two local limits. Merely having hierarchical tenant labels is not a conserved allocation. The scenario covers one typed shared rail, not cross-domain netting or a production prime-brokerage system.
+ 
+-\lead{Evidence status.} C8--C10 remain proposed conformance targets as of this version. They must not be included in baseline test counts, described as measured demonstrations, or assigned an implementing hash until the corresponding code and observed evidence exist.
++\lead{Evidence status and reproduction.} C8--C10 were executed from clean source \texttt{\coveragehash}, with an unchanged source-tree digest throughout the run. The local regression result was 359 backend tests passed, 0 skipped, a successful frontend build, and 39 browser tests passed, 0 skipped. These are new local counts, separate from the historical baseline reports. Run \texttt{make reproduce-coverage} to execute all three schedules and the regression checks; individual commands and bundle layout are documented in the repository. The captured evidence is stored in \path{docs/research/coverage-evidence/coverage-evidence.zip}; the archive contains the source, units, environment, topology, signed artifacts, raw records, reconstructed observations and actual test commands, with file hashes in its manifest. The source and artifact-storage commits are distinct. No new CI result or hosted-provider deployment is claimed; publishing this local source and evidence to the remote repository remains outstanding. Local signed fixture checkpoints detect changes to captured histories and projections, but do not serve as accepted institutional outcome evidence or independent external anchors. Replacing the complete unanchored fixture history remains outside the verifier guarantee. Public C8 process execution remains unsupported.
+ \end{document}

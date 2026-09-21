@@ -1,0 +1,2261 @@
+{
+  "checks": [
+    {
+      "name": "C8",
+      "command": [
+        "/home/ian/Projects/OAC/.venv/bin/python",
+        "-m",
+        "saac.coverage_experiments",
+        "--case",
+        "C8",
+        "--output",
+        "/home/ian/Projects/OAC/.runtime/coverage-pinned-f7d27db/C8.json"
+      ],
+      "exit_code": 0,
+      "result": "passed",
+      "log": "C8.log"
+    },
+    {
+      "name": "C9",
+      "command": [
+        "/home/ian/Projects/OAC/.venv/bin/python",
+        "-m",
+        "saac.coverage_experiments",
+        "--case",
+        "C9",
+        "--output",
+        "/home/ian/Projects/OAC/.runtime/coverage-pinned-f7d27db/C9.json"
+      ],
+      "exit_code": 0,
+      "result": "passed",
+      "log": "C9.log"
+    },
+    {
+      "name": "C10",
+      "command": [
+        "/home/ian/Projects/OAC/.venv/bin/python",
+        "-m",
+        "saac.coverage_experiments",
+        "--case",
+        "C10",
+        "--output",
+        "/home/ian/Projects/OAC/.runtime/coverage-pinned-f7d27db/C10.json"
+      ],
+      "exit_code": 0,
+      "result": "passed",
+      "log": "C10.log"
+    },
+    {
+      "name": "backend",
+      "command": [
+        "/home/ian/Projects/OAC/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/home/ian/Projects/OAC/.runtime/coverage-pinned-f7d27db/backend.xml"
+      ],
+      "exit_code": 0,
+      "result": "passed",
+      "log": "backend.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "result": "passed",
+      "log": "build.log"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "npm",
+        "test",
+        "--",
+        "--reporter=json"
+      ],
+      "exit_code": 0,
+      "result": "passed",
+      "log": "browser.log"
+    }
+  ],
+  "backend": [
+    {
+      "id": "tests/test_authorization.py::test_concurrent_authorization_retries_across_integrations_and_service_instances",
+      "result": "passed",
+      "seconds": "1.641"
+    },
+    {
+      "id": "tests/test_authorization.py::test_http_retry_is_durable_scoped_and_not_new_authority",
+      "result": "passed",
+      "seconds": "0.099"
+    },
+    {
+      "id": "tests/test_authorization.py::test_request_identity_is_bound_to_authority_context",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_authorization.py::test_retry_does_not_refresh_expiry_or_rebind_state",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_authorization.py::test_preview_and_denied_retry_do_not_allocate",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[ ]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[bad/key]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[\\xe9]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[3]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_invalid_request_identity_fails_before_allocation[False]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_signed_book_survives_restart_without_rewriting",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_authorization.py::test_artifact_type_substitution_cannot_normalize_or_reuse_signatures",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_authorization.py::test_campaign_request_keys_and_mcp_tools_preserve_identity",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_authorization.py::test_replica_redemption_and_non_use_are_mutually_exclusive[False]",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_authorization.py::test_replica_redemption_and_non_use_are_mutually_exclusive[True]",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_authorization.py::test_saac_configuration_uses_its_namespace_and_default",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_authorization.py::test_price_improvement_settles_only_actual_exposure",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_conformance.py::test_actor_snapshot_is_not_authoritative",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_conformance.py::test_verdict_and_unsigned_are_not_authority[artifact0]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_verdict_and_unsigned_are_not_authority[artifact1]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_verdict_and_unsigned_are_not_authority[artifact2]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_unknown_effects_fail_closed[spawn]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_unknown_effects_fail_closed[shell]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_unknown_effects_fail_closed[raw_dispatch]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_unknown_effects_fail_closed[payments()]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes0-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes1-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes2-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes3-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes4-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes5-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes6-IDENTITY_BINDING]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes7-IDENTITY_BINDING]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_effect_binding[changes8-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_token_mutation_invalidates_signature",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_conformance.py::test_wrong_audience_and_replay",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_conformance.py::test_expiry_does_not_release_then_signed_nonuse_does",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_aliases_same_canonical_effect",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_alias_rebinding_fails",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_conformance.py::test_stale_state[resource]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_conformance.py::test_stale_state[route]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_conformance.py::test_pack_supersession_rollback_and_pending_approval",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_exact_human_approval_and_capacity_recheck",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_conformance.py::test_approval_cannot_hold_stale_capacity",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_conformance.py::test_approval_reject_resource_mutation_and_expiry",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_conformance.py::test_attenuating_modify_recomputes_bound",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_degrade_rewrites_grant_and_needs_operator_restore",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_conformance.py::test_signed_scoped_dispatch_and_child",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes0-DELEGATION_EXPANSION]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes1-DELEGATION_EXPANSION]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes2-DELEGATION_EXPANSION]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes3-DELEGATION_EXPANSION]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes4-DELEGATION_EXPANSION]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes5-DELEGATION_PRINCIPAL]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_delegation_cannot_expand[changes6-DELEGATION_EXPIRY]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_partial_cancel_reordered_and_duplicated_receipts",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_partial_keeps_remainder_live",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_conformance.py::test_rail_rejection_signed_release",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_conformance.py::test_receipt_loss_expiry_and_restart",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_conformance.py::test_forged_and_conflicting_receipts",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_conformance.py::test_signing_failure_rolls_back_reservation",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_execution_exception_rolls_back_then_conservative_recovery",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_100_simultaneous_requests_and_mixed_receipt_delivery",
+      "result": "passed",
+      "seconds": "7.043"
+    },
+    {
+      "id": "tests/test_conformance.py::test_concurrent_nonce_redemption",
+      "result": "passed",
+      "seconds": "0.338"
+    },
+    {
+      "id": "tests/test_conformance.py::test_tape_tamper_and_retained_checkpoint",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_conformance.py::test_noncanonical_amounts_fail[1.1]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_conformance.py::test_noncanonical_amounts_fail[100]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_conformance.py::test_noncanonical_amounts_fail[True]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_conformance.py::test_noncanonical_amounts_fail[-1]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_conformance.py::test_noncanonical_amounts_fail[0]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_conformance.py::test_limit_cannot_drop_below_exposure",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_conformance.py::test_socket_checks_expiry_after_waiting_for_transaction",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_conformance.py::test_descendant_amount_expansion_denied",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_actor_cannot_run_or_read_institutional_experiments",
+      "result": "passed",
+      "seconds": "0.045"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_requests_accept_only_fixed_cases_and_durable_request_ids",
+      "result": "passed",
+      "seconds": "0.054"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_duplicate_requests_execute_once_and_retargeting_conflicts",
+      "result": "passed",
+      "seconds": "0.039"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_public_isolation_and_shared_book_quota",
+      "result": "passed",
+      "seconds": "0.057"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_public_c8_is_explicitly_unsupported_and_origin_guarded",
+      "result": "passed",
+      "seconds": "0.039"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_concurrent_creations_do_not_oversubscribe_public_book_quota",
+      "result": "passed",
+      "seconds": "0.041"
+    },
+    {
+      "id": "tests/test_coverage_api.py::test_coverage_heavy_job_budget_and_failed_attempt_are_retained",
+      "result": "passed",
+      "seconds": "0.041"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_coverage_verifier_accepts_observed_safe_and_detected_controls[C9]",
+      "result": "passed",
+      "seconds": "0.166"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_coverage_verifier_accepts_observed_safe_and_detected_controls[C10]",
+      "result": "passed",
+      "seconds": "0.027"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[checkpoint_number]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[clipped_gap]",
+      "result": "passed",
+      "seconds": "0.025"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[snapshot_allocation]",
+      "result": "passed",
+      "seconds": "0.012"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[snapshot_grant]",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[missing_event_rehashed]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[replayed_event_rehashed]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[capability_signature_rehashed]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[receipt_lifecycle_rehashed]",
+      "result": "passed",
+      "seconds": "0.012"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[late_receipt_projection]",
+      "result": "passed",
+      "seconds": "0.041"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[competitor_projection]",
+      "result": "passed",
+      "seconds": "0.036"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[cleanup_projection]",
+      "result": "passed",
+      "seconds": "0.020"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[scope_projection]",
+      "result": "passed",
+      "seconds": "0.020"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[negative_control_label]",
+      "result": "passed",
+      "seconds": "0.040"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[missing_attestation]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c9_verifier_rejects_mutation_even_with_rehashed_local_history[oracle_lifecycle]",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[forged_local_green_number]",
+      "result": "passed",
+      "seconds": "0.010"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[enlarged_shared_limit]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[admission_signature_projection]",
+      "result": "passed",
+      "seconds": "0.019"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[prime_signature]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[prime_binding]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[prime_missing_acceptance]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[prime_replayed_acceptance]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[prime_truncated_prefix_as_promise]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[cover_forged_charge]",
+      "result": "passed",
+      "seconds": "0.016"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[cover_missing_event]",
+      "result": "passed",
+      "seconds": "0.016"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[cover_retarged_lifecycle]",
+      "result": "passed",
+      "seconds": "0.025"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[cover_missing_attestation]",
+      "result": "passed",
+      "seconds": "0.016"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[prime_missing_attestation]",
+      "result": "passed",
+      "seconds": "0.016"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[negative_control_label]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_coverage_verifier.py::test_c10_verifier_rejects_scope_and_artifact_mutations[ordinary_tape_projection]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_integrations.py::test_three_integrations_share_authority_and_explicit_receipts",
+      "result": "passed",
+      "seconds": "0.061"
+    },
+    {
+      "id": "tests/test_integrations.py::test_compromised_adapter_cannot_bypass_raw_rail",
+      "result": "passed",
+      "seconds": "0.048"
+    },
+    {
+      "id": "tests/test_integrations.py::test_server_identity_does_not_depend_on_sdk_checks",
+      "result": "passed",
+      "seconds": "0.041"
+    },
+    {
+      "id": "tests/test_integrations.py::test_mcp_tools_only_route_and_cannot_self_approve",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_integrations.py::test_malformed_capability_has_structured_refusal[None]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_malformed_capability_has_structured_refusal[artifact1]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_malformed_capability_has_structured_refusal[allowed]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_malformed_capability_has_structured_refusal[42]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_malformed_capability_has_structured_refusal[True]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_malformed_capability_has_structured_refusal[artifact5]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_live_nonce_alone_cannot_redeem_inactive_reservation[released]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_integrations.py::test_live_nonce_alone_cannot_redeem_inactive_reservation[settled]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_integrations.py::test_live_nonce_alone_cannot_redeem_inactive_reservation[executing]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_integrations.py::test_nonce_binds_receipts_when_optional_capability_id_is_absent",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[normal-EXECUTED-1]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[rejection-ACTION_LIMIT-0]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[bypass-EXECUTED-1]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[replay-REPLAY-1]",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[mutation-EFFECT_MISMATCH-0]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[expiry-EXPIRED-0]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_integrations.py::test_visible_scenarios_use_real_core[retry-REPLAY-1]",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_integrations.py::test_delegation_tree_cannot_manufacture_authority",
+      "result": "passed",
+      "seconds": "0.023"
+    },
+    {
+      "id": "tests/test_integrations.py::test_million_dollar_swarm_reserves_one_shared_book",
+      "result": "passed",
+      "seconds": "7.937"
+    },
+    {
+      "id": "tests/test_integrations.py::test_naive_mode_never_mints_authority_or_touches_protected_effects",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_integrations.py::test_each_domain_refuses_direct_bypass[payments]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_each_domain_refuses_direct_bypass[trading]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_each_domain_refuses_direct_bypass[referrals]",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_integrations.py::test_each_domain_refuses_direct_bypass[runtime]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[normal]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[modify-up]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[beneficiary]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[replay]",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[audience]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[expired]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[aliases]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[alias-rebound]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[stale]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[pack]",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[delegation]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[expansion]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[receipt-loss]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[partial]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[human]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[attenuate]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_scenarios[race]",
+      "result": "passed",
+      "seconds": "7.482"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_actor_cannot_reach_any_operator_control",
+      "result": "passed",
+      "seconds": "0.046"
+    },
+    {
+      "id": "tests/test_lab_api.py::test_lab_reconciliation_endpoint",
+      "result": "passed",
+      "seconds": "0.044"
+    },
+    {
+      "id": "tests/test_lifecycle.py::test_complete_vertical_slice",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_lifecycle.py::test_api_vertical_slice_and_separation",
+      "result": "passed",
+      "seconds": "0.040"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_preview_is_not_authority_and_actor_counters_are_ignored[trading]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_preview_is_not_authority_and_actor_counters_are_ignored[referrals]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_preview_is_not_authority_and_actor_counters_are_ignored[runtime]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_exact_audience_expiry_pack_and_replay[trading]",
+      "result": "passed",
+      "seconds": "0.019"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_exact_audience_expiry_pack_and_replay[referrals]",
+      "result": "passed",
+      "seconds": "0.022"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_exact_audience_expiry_pack_and_replay[runtime]",
+      "result": "passed",
+      "seconds": "0.022"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_modification_and_resource_staleness[trading-changes0]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_modification_and_resource_staleness[referrals-changes1]",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_modification_and_resource_staleness[runtime-changes2]",
+      "result": "passed",
+      "seconds": "0.010"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_trading_working_partial_cancel_and_price_improvement",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_cancel_fill_race_never_releases_live_exposure",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_fill_receipts_reordered_lost_and_cancel_authority_required",
+      "result": "passed",
+      "seconds": "0.010"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_referral_human_snapshot_consent_manifest_and_irreversibility",
+      "result": "passed",
+      "seconds": "0.024"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_canonical_aliases_and_patient_substitution",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_real_containment_and_receipt_loss",
+      "result": "passed",
+      "seconds": "0.036"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_dispatch_crash_recovery_is_conservative[before_dispatch]",
+      "result": "passed",
+      "seconds": "0.034"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_dispatch_crash_recovery_is_conservative[after_claim]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_dispatch_crash_recovery_is_conservative[after_run]",
+      "result": "passed",
+      "seconds": "0.031"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_runtime_no_fallback_and_monotonic_delegation",
+      "result": "passed",
+      "seconds": "0.019"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_hundred_concurrent_requests_all_dimensions[payments]",
+      "result": "passed",
+      "seconds": "4.949"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_hundred_concurrent_requests_all_dimensions[trading]",
+      "result": "passed",
+      "seconds": "9.193"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_hundred_concurrent_requests_all_dimensions[referrals]",
+      "result": "passed",
+      "seconds": "9.301"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_hundred_concurrent_requests_all_dimensions[runtime]",
+      "result": "passed",
+      "seconds": "8.906"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_workbench_api_is_scoped_to_operator_and_real_effects",
+      "result": "passed",
+      "seconds": "0.061"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_ordinary_actor_reaches_only_the_explicit_dummy_coverage_sink",
+      "result": "passed",
+      "seconds": "0.036"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_queued_job_rechecks_authority_at_launch_and_proves_non_use[expiry]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_queued_job_rechecks_authority_at_launch_and_proves_non_use[pack]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_queued_job_rechecks_authority_at_launch_and_proves_non_use[resource]",
+      "result": "passed",
+      "seconds": "0.014"
+    },
+    {
+      "id": "tests/test_multi_rail.py::test_queued_job_rechecks_authority_at_launch_and_proves_non_use[halt]",
+      "result": "passed",
+      "seconds": "0.012"
+    },
+    {
+      "id": "tests/test_parent_revoke.py::test_c9_safe_retains_occupancy_then_reconciles_revoked_child",
+      "result": "passed",
+      "seconds": "0.054"
+    },
+    {
+      "id": "tests/test_parent_revoke.py::test_c9_competitor_is_independently_valid_and_denied_only_for_headroom",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_parent_revoke.py::test_c9_control_preserves_rejected_signed_late_evidence_and_breach",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_parent_revoke.py::test_c9_outcome_is_cumulative_idempotent_and_independent_of_revoked_lineage",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_parent_revoke.py::test_c9_export_is_json_safe_and_does_not_export_private_keys",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_parent_revoke.py::test_c9_refuses_to_overwrite_an_evidence_directory",
+      "result": "passed",
+      "seconds": "0.001"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_start_cookie_is_private_expiring_and_has_no_admin_authority",
+      "result": "passed",
+      "seconds": "0.046"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_cross_visitor_and_admin_books_keys_campaigns_and_actions_are_isolated",
+      "result": "passed",
+      "seconds": "0.067"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_scenarios_use_the_real_capability_and_receipt_path[normal-EXECUTED]",
+      "result": "passed",
+      "seconds": "0.076"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_scenarios_use_the_real_capability_and_receipt_path[bypass-EXECUTED]",
+      "result": "passed",
+      "seconds": "0.047"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_scenarios_use_the_real_capability_and_receipt_path[replay-REPLAY]",
+      "result": "passed",
+      "seconds": "0.048"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_scenarios_use_the_real_capability_and_receipt_path[mutation-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.045"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_scenarios_use_the_real_capability_and_receipt_path[retry-REPLAY]",
+      "result": "passed",
+      "seconds": "0.058"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_scenarios_use_the_real_capability_and_receipt_path[expiry-EXPIRED]",
+      "result": "passed",
+      "seconds": "0.045"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_payment_swarm_uses_one_shared_million_dollar_book",
+      "result": "passed",
+      "seconds": "7.051"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_process_launch_and_actor_channel_routes_are_unavailable",
+      "result": "passed",
+      "seconds": "0.080"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_expiry_revocation_cleanup_and_unchanged_admin_history",
+      "result": "passed",
+      "seconds": "0.047"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_session_and_evidence_survive_restart",
+      "result": "passed",
+      "seconds": "0.080"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_cross_site_session_creation_is_rejected[headers0]",
+      "result": "passed",
+      "seconds": "0.034"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_cross_site_session_creation_is_rejected[headers1]",
+      "result": "passed",
+      "seconds": "0.034"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_cross_site_session_creation_is_rejected[headers2]",
+      "result": "passed",
+      "seconds": "0.034"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_cross_site_session_creation_is_rejected[headers3]",
+      "result": "passed",
+      "seconds": "0.034"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_secure_cookie_and_origin_for_public_https",
+      "result": "passed",
+      "seconds": "0.036"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_body_population_book_campaign_and_action_limits",
+      "result": "passed",
+      "seconds": "0.083"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_storage_and_request_rate_limits",
+      "result": "passed",
+      "seconds": "0.040"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_concurrent_session_cap_and_creation_throttle",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_global_job_limit_and_end_during_inflight_campaign",
+      "result": "passed",
+      "seconds": "0.058"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_public_single_process_guard",
+      "result": "passed",
+      "seconds": "0.001"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_operator_and_actor_remain_separate_from_visitors",
+      "result": "passed",
+      "seconds": "0.039"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_creation_throttle_survives_ending_a_session",
+      "result": "passed",
+      "seconds": "0.004"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_heavy_job_budget_and_cleanup_during_http_lease",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_public_demo.py::test_cookie_alone_cannot_authorize_cross_site_mutation",
+      "result": "passed",
+      "seconds": "0.051"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_separate_process_restart_and_exact_checkpoints",
+      "result": "passed",
+      "seconds": "1.121"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_promises_require_issuance_history_and_no_double_count",
+      "result": "passed",
+      "seconds": "0.001"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_accepted_evidence_recovery_uses_ordinary_reconciler",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_exports_only_public_artifacts_and_signed_receipts",
+      "result": "passed",
+      "seconds": "0.034"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_missing_eligibility_fails_closed_and_preserves_allocation",
+      "result": "passed",
+      "seconds": "0.346"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_interrupted_remote_claim_cannot_release_and_retry_recovers",
+      "result": "passed",
+      "seconds": "0.348"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_remote_non_use_closure_and_redemption_have_one_winner[0]",
+      "result": "passed",
+      "seconds": "0.261"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_remote_non_use_closure_and_redemption_have_one_winner[1]",
+      "result": "passed",
+      "seconds": "0.264"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_remote_non_use_closure_and_redemption_have_one_winner[2]",
+      "result": "passed",
+      "seconds": "0.263"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_gateway_refuses_changed_authority_or_effect[signature-INVALID_SIGNATURE]",
+      "result": "passed",
+      "seconds": "0.258"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_gateway_refuses_changed_authority_or_effect[effect-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.258"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_gateway_refuses_changed_authority_or_effect[audience-WRONG_AUDIENCE]",
+      "result": "passed",
+      "seconds": "0.258"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_gateway_refuses_changed_authority_or_effect[identity-IDENTITY_BINDING]",
+      "result": "passed",
+      "seconds": "0.259"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_remote_inbox_rejects_forged_evidence_without_capacity",
+      "result": "passed",
+      "seconds": "0.262"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_store_ownership_no_shared_connections_or_issuer_keys",
+      "result": "passed",
+      "seconds": "0.252"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_live_eligibility_changes_refuse_remote_execution[expire_authority-EXPIRED]",
+      "result": "passed",
+      "seconds": "0.357"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_live_eligibility_changes_refuse_remote_execution[halt-BREAKER_HALT]",
+      "result": "passed",
+      "seconds": "0.349"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_independent_verifier_accepts_observation_and_retains_control_failure",
+      "result": "passed",
+      "seconds": "0.263"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[attestation_signature]",
+      "result": "passed",
+      "seconds": "0.054"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[receipt_signature]",
+      "result": "passed",
+      "seconds": "0.043"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[capability_lifecycle]",
+      "result": "passed",
+      "seconds": "0.048"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[missing_event]",
+      "result": "passed",
+      "seconds": "0.068"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[replayed_event]",
+      "result": "passed",
+      "seconds": "0.051"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[runtime_risk]",
+      "result": "passed",
+      "seconds": "0.064"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[rail_order]",
+      "result": "passed",
+      "seconds": "0.085"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[process_pid]",
+      "result": "passed",
+      "seconds": "0.121"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[process_snapshot]",
+      "result": "passed",
+      "seconds": "0.043"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_c8_verifier_rejects_tampered_evidence[historical_control_failure]",
+      "result": "passed",
+      "seconds": "0.257"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_checkpoint_attestation_cannot_be_used_as_release_evidence",
+      "result": "passed",
+      "seconds": "0.258"
+    },
+    {
+      "id": "tests/test_remote_rail.py::test_expired_interrupted_dispatch_stays_in_oracle_and_cannot_close",
+      "result": "passed",
+      "seconds": "0.273"
+    },
+    {
+      "id": "tests/test_swarm.py::test_complete_lifecycle_and_preview_not_authority",
+      "result": "passed",
+      "seconds": "0.010"
+    },
+    {
+      "id": "tests/test_swarm.py::test_exact_effect[change0-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_exact_effect[change1-STALE_STATE]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_exact_effect[change2-EFFECT_MISMATCH]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_exact_effect[change3-IDENTITY_BINDING]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_replay_expiry_audience",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_swarm.py::test_aliases_and_read_commitment",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_swarm.py::test_live_bindings[resource]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_swarm.py::test_live_bindings[route]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_swarm.py::test_live_bindings[pack]",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[simulation-RESOURCE_DENIED]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[credential-RESOURCE_DENIED]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[coordination-RESOURCE_DENIED]",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[expansion-DELEGATION_EXPANSION]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[pivot-WRONG_AUDIENCE]",
+      "result": "passed",
+      "seconds": "0.010"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[upload-RESOURCE_DENIED]",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_swarm.py::test_domain_negative_vectors[revocation-PACK_NOT_LIVE]",
+      "result": "passed",
+      "seconds": "0.012"
+    },
+    {
+      "id": "tests/test_swarm.py::test_snapshot_approval_does_not_authorize_mutation",
+      "result": "passed",
+      "seconds": "0.010"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[resources-value0]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[operations-value1]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[audiences-value2]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[purposes-value3]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[recipients-value4]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[principal_id-other]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[exp-1900000000]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_delegation_subset_all_dimensions[ceilings-value7]",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_swarm.py::test_child_shared_budget_live_ancestry_and_stop",
+      "result": "passed",
+      "seconds": "0.019"
+    },
+    {
+      "id": "tests/test_swarm.py::test_receipt_loss_restart_and_wrong_observer",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_swarm.py::test_forged_journal_and_transcript_do_not_release",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_swarm.py::test_100_simultaneous_distinct_identities_and_per_commit_audit",
+      "result": "passed",
+      "seconds": "3.229"
+    },
+    {
+      "id": "tests/test_swarm.py::test_large_population_shared_collar[1200]",
+      "result": "passed",
+      "seconds": "18.393"
+    },
+    {
+      "id": "tests/test_swarm.py::test_large_population_shared_collar[5000]",
+      "result": "passed",
+      "seconds": "80.147"
+    },
+    {
+      "id": "tests/test_swarm.py::test_lifetime_starts_not_refunded_by_stops",
+      "result": "passed",
+      "seconds": "0.022"
+    },
+    {
+      "id": "tests/test_swarm.py::test_coverage_and_bad_policy_are_counterexamples",
+      "result": "passed",
+      "seconds": "0.039"
+    },
+    {
+      "id": "tests/test_swarm.py::test_reactive_prerequisites_change_population_outcomes",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_restart_after_issuance_and_execution_does_not_duplicate",
+      "result": "passed",
+      "seconds": "0.014"
+    },
+    {
+      "id": "tests/test_swarm.py::test_actual_contained_process_channels",
+      "result": "passed",
+      "seconds": "0.052"
+    },
+    {
+      "id": "tests/test_swarm.py::test_http_identity_operator_boundary_pagination_compare",
+      "result": "passed",
+      "seconds": "0.064"
+    },
+    {
+      "id": "tests/test_swarm.py::test_published_negative_vector_manifest",
+      "result": "passed",
+      "seconds": "0.031"
+    },
+    {
+      "id": "tests/test_swarm.py::test_workbench_catalog_preserves_four_single_rail_profiles",
+      "result": "passed",
+      "seconds": "0.035"
+    },
+    {
+      "id": "tests/test_swarm.py::test_contained_queued_non_use_and_ambiguous_launch",
+      "result": "passed",
+      "seconds": "0.014"
+    },
+    {
+      "id": "tests/test_swarm.py::test_containment_unavailable_never_falls_back",
+      "result": "passed",
+      "seconds": "0.009"
+    },
+    {
+      "id": "tests/test_swarm.py::test_staged_intent_survives_tamper_then_scheduler_executes_once",
+      "result": "passed",
+      "seconds": "0.016"
+    },
+    {
+      "id": "tests/test_swarm.py::test_virtual_clock_comparison_and_restart",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_swarm.py::test_non_use_recovery_is_not_counted_as_an_execution",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_separate_configurations_match_real_shared_scope",
+      "result": "passed",
+      "seconds": "0.056"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_counts_usable_promises_before_redemption_without_double_counting",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_common_cover_denies_before_second_usable_capability",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_real_contention_commits_at_most_ten_units_before_issuance",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_failed_or_ambiguous_issuance_retains_cover_until_same_identity_recovers[before_local]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_failed_or_ambiguous_issuance_retains_cover_until_same_identity_recovers[after_local]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_definite_denial_releases_only_an_unissued_hold",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_covering_retry_cannot_change_the_effect",
+      "result": "passed",
+      "seconds": "0.007"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_conserved_split_is_enforced_before_issuance",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_prime_rejects_local_authority_without_common_cover",
+      "result": "passed",
+      "seconds": "0.008"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_downstream_acceptance_survives_local_rollback_retry_without_duplicate_effect",
+      "result": "passed",
+      "seconds": "0.016"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_signed_prime_and_cover_records_export_no_private_material",
+      "result": "passed",
+      "seconds": "0.005"
+    },
+    {
+      "id": "tests/test_two_books_one_prime.py::test_c10_refuses_to_overwrite_evidence",
+      "result": "passed",
+      "seconds": "0.001"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_matched_atomic_admission_and_event_derived_obligations",
+      "result": "passed",
+      "seconds": "19.282"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_export_retains_signed_artifacts_and_oracle_records",
+      "result": "passed",
+      "seconds": "0.094"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_stage_replay_is_idempotent_and_clock_cannot_be_selected",
+      "result": "passed",
+      "seconds": "0.268"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_durable_reconstruction_after_execution_before_receipt_acceptance",
+      "result": "passed",
+      "seconds": "19.511"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_partial_stage_reconstruction_does_not_duplicate_execution",
+      "result": "passed",
+      "seconds": "18.494"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_signed_authority_cannot_execute_before_reservation_commits",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_expiry_never_cancels_working_orders_and_new_redemption_expires",
+      "result": "passed",
+      "seconds": "0.017"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_missing_forged_conflicting_reordered_and_delayed_receipts_do_not_create_headroom",
+      "result": "passed",
+      "seconds": "0.015"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_non_use_closure_and_redemption_cannot_both_win[0]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_non_use_closure_and_redemption_cannot_both_win[1]",
+      "result": "passed",
+      "seconds": "0.013"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_non_use_closure_and_redemption_cannot_both_win[2]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_non_use_closure_and_redemption_cannot_both_win[3]",
+      "result": "passed",
+      "seconds": "0.011"
+    },
+    {
+      "id": "tests/test_uncertain.py::test_stale_reconstructed_instance_refreshes_clock_under_lock",
+      "result": "passed",
+      "seconds": "0.048"
+    },
+    {
+      "id": "tests/test_uncertain_api.py::test_actor_cannot_select_policy_or_access_experiment_controls",
+      "result": "passed",
+      "seconds": "0.295"
+    },
+    {
+      "id": "tests/test_uncertain_api.py::test_duplicate_creation_and_steps_are_idempotent",
+      "result": "passed",
+      "seconds": "19.437"
+    },
+    {
+      "id": "tests/test_uncertain_api.py::test_visitors_are_isolated_and_comparisons_share_existing_book_quota",
+      "result": "passed",
+      "seconds": "0.530"
+    },
+    {
+      "id": "tests/test_uncertain_api.py::test_full_export_verifier_and_view_agree",
+      "result": "passed",
+      "seconds": "20.660"
+    },
+    {
+      "id": "tests/test_uncertain_provenance.py::test_packaged_revision_is_allowlisted_and_never_claims_clean_checkout",
+      "result": "passed",
+      "seconds": "0.003"
+    },
+    {
+      "id": "tests/test_uncertain_provenance.py::test_build_and_browser_configuration_changes_alter_fingerprint",
+      "result": "passed",
+      "seconds": "0.006"
+    },
+    {
+      "id": "tests/test_uncertain_provenance.py::test_invalid_deployment_revision_is_not_exported",
+      "result": "passed",
+      "seconds": "0.002"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[ready]",
+      "result": "passed",
+      "seconds": "19.506"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[admission]",
+      "result": "passed",
+      "seconds": "0.168"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[hidden_fills]",
+      "result": "passed",
+      "seconds": "0.192"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[deadline]",
+      "result": "passed",
+      "seconds": "0.286"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[second_batch]",
+      "result": "passed",
+      "seconds": "0.378"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[recovered_fills]",
+      "result": "passed",
+      "seconds": "0.487"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_each_completed_prefix_verifies_without_claiming_an_early_breach[cancellations]",
+      "result": "passed",
+      "seconds": "0.587"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_forged_artifacts_fail_even_after_unsigned_history_is_rehashed[CAPABILITY_ISSUED]",
+      "result": "passed",
+      "seconds": "0.035"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_forged_artifacts_fail_even_after_unsigned_history_is_rehashed[RECEIPT_CREATED]",
+      "result": "passed",
+      "seconds": "0.051"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_rehashed_oracle_fill_must_match_genuine_signed_receipt",
+      "result": "passed",
+      "seconds": "0.066"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_rehashed_execution_result_must_match_its_signed_receipt",
+      "result": "passed",
+      "seconds": "0.082"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[frame]",
+      "result": "passed",
+      "seconds": "0.208"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[oracle_record]",
+      "result": "passed",
+      "seconds": "0.338"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[omitted_breach]",
+      "result": "passed",
+      "seconds": "0.530"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[order_table]",
+      "result": "passed",
+      "seconds": "0.372"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[nonce]",
+      "result": "passed",
+      "seconds": "0.344"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[request_identity]",
+      "result": "passed",
+      "seconds": "0.353"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[allocation]",
+      "result": "passed",
+      "seconds": "0.067"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[withheld_receipt]",
+      "result": "passed",
+      "seconds": "0.097"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[negative_availability]",
+      "result": "passed",
+      "seconds": "0.364"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_export_and_dashboard_tampering_fails_closed[missing_frame]",
+      "result": "passed",
+      "seconds": "0.022"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_malformed_evidence_is_a_report_not_an_exception[None]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_malformed_evidence_is_a_report_not_an_exception[malformed1]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_malformed_evidence_is_a_report_not_an_exception[malformed2]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_malformed_evidence_is_a_report_not_an_exception[malformed3]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_malformed_evidence_is_a_report_not_an_exception[malformed4]",
+      "result": "passed",
+      "seconds": "0.000"
+    },
+    {
+      "id": "tests/test_uncertain_verifier.py::test_offline_cli_reports_valid_control_detection_and_invalid_json",
+      "result": "passed",
+      "seconds": "0.726"
+    }
+  ],
+  "browser": [
+    {
+      "id": "architecture.spec.ts \u203a authorization retry retains one capability and cannot execute twice",
+      "file": "architecture.spec.ts",
+      "line": 13,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a lifecycle inspection waits for the new experiment to finish loading",
+      "file": "architecture.spec.ts",
+      "line": 25,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a native integration completes every recorded lifecycle stage",
+      "file": "architecture.spec.ts",
+      "line": 57,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a harness integration completes every recorded lifecycle stage",
+      "file": "architecture.spec.ts",
+      "line": 57,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a mcp integration completes every recorded lifecycle stage",
+      "file": "architecture.spec.ts",
+      "line": 57,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a bypassing the adapter fails at the same rail that accepts valid authority",
+      "file": "architecture.spec.ts",
+      "line": 81,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a policy, replay, exact destination mutation and expiry have inspectable refusals",
+      "file": "architecture.spec.ts",
+      "line": 97,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a delegated children share lineage and cannot widen scope",
+      "file": "architecture.spec.ts",
+      "line": 121,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a selectable naive and atomic swarm modes show tenfold exposure difference",
+      "file": "architecture.spec.ts",
+      "line": 152,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a mobile delegation and stage evidence fit the viewport",
+      "file": "architecture.spec.ts",
+      "line": 186,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "architecture.spec.ts \u203a desktop architecture and bypass visual record",
+      "file": "architecture.spec.ts",
+      "line": 207,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "coverage.spec.ts \u203a C9 observed dashboard separates safe accounting, unsafe conformance and detected breach",
+      "file": "coverage.spec.ts",
+      "line": 16,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "coverage.spec.ts \u203a C10 shows promises, local green books and a red shared allocation from observed state",
+      "file": "coverage.spec.ts",
+      "line": 50,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "coverage.spec.ts \u203a C8 local operator observes promises, separate-process restart and preserved retries",
+      "file": "coverage.spec.ts",
+      "line": 70,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a real preview, reservation, socket and receipt transitions",
+      "file": "lifecycle.spec.ts",
+      "line": 28,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a modification fails before redemption; original authority remains usable",
+      "file": "lifecycle.spec.ts",
+      "line": 64,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a lost receipt retains risk until recovery",
+      "file": "lifecycle.spec.ts",
+      "line": 83,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a human approval binds the reviewed payment",
+      "file": "lifecycle.spec.ts",
+      "line": 97,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a 100-way race is isolated and admits exactly ten capabilities",
+      "file": "lifecycle.spec.ts",
+      "line": 111,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a trading acceptance, partial fill, separately authorized cancellation",
+      "file": "lifecycle.spec.ts",
+      "line": 129,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a referrals require manifest review and fail after consent revocation",
+      "file": "lifecycle.spec.ts",
+      "line": 161,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a runtime runs real contained probes and exposes the coverage gap",
+      "file": "lifecycle.spec.ts",
+      "line": 184,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "lifecycle.spec.ts \u203a 360px layout retains readable controls without horizontal overflow",
+      "file": "lifecycle.spec.ts",
+      "line": 214,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "public-demo.spec.ts \u203a public entry keeps credentials private and runs bounded C9/C10 coverage in the same session",
+      "file": "public-demo.spec.ts",
+      "line": 18,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "public-demo.spec.ts \u203a two browsers get separate books and cannot inspect each other's actions",
+      "file": "public-demo.spec.ts",
+      "line": 75,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "public-demo.spec.ts \u203a public swarm and runtime clearly show their execution limits",
+      "file": "public-demo.spec.ts",
+      "line": 110,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "public-demo.spec.ts \u203a expired or missing sessions return to a usable start page",
+      "file": "public-demo.spec.ts",
+      "line": 149,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "public-demo.spec.ts \u203a public entry and private workspace fit a phone",
+      "file": "public-demo.spec.ts",
+      "line": 173,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a useful team, real signed evidence, trace and accessible population",
+      "file": "swarm.spec.ts",
+      "line": 37,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a 100 distinct actor storm obeys shared collar and stops preserve starts",
+      "file": "swarm.spec.ts",
+      "line": 64,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a uncertainty preserves slots after start receipt recovery",
+      "file": "swarm.spec.ts",
+      "line": 83,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a coverage gap and identical-intent comparison separate oracle from authority",
+      "file": "swarm.spec.ts",
+      "line": 99,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a real contained processes and mobile reduced motion",
+      "file": "swarm.spec.ts",
+      "line": 119,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a staged capability binds exact effect before execution, replay is refused",
+      "file": "swarm.spec.ts",
+      "line": 140,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "swarm.spec.ts \u203a refresh retains the campaign without duplicating effects",
+      "file": "swarm.spec.ts",
+      "line": 170,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "uncertain.spec.ts \u203a uncertain execution exposes matched admission, deadline divergence and evidence recovery",
+      "file": "uncertain.spec.ts",
+      "line": 83,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "uncertain.spec.ts \u203a uncertain run, export, replay and reset preserve backend evidence",
+      "file": "uncertain.spec.ts",
+      "line": 178,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "uncertain.spec.ts \u203a repeated uncertain step clicks commit a stage only once",
+      "file": "uncertain.spec.ts",
+      "line": 257,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    },
+    {
+      "id": "uncertain.spec.ts \u203a public uncertain experiments remain isolated and fit a phone",
+      "file": "uncertain.spec.ts",
+      "line": 283,
+      "result": "expected",
+      "attempts": [
+        "passed"
+      ]
+    }
+  ],
+  "backend_counts": {
+    "passed": 359,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser_counts": {
+    "expected": 39,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "scope": "all",
+  "ci_run_url": null,
+  "source_unchanged_during_run": true,
+  "invocation": [
+    "/home/ian/Projects/OAC/.venv/bin/python",
+    "scripts/reproduce_coverage.py",
+    "--checks",
+    "all",
+    "--output",
+    ".runtime/coverage-pinned-f7d27db"
+  ],
+  "unavailable": [
+    "Hosted deployment/browser execution was not performed by this command."
+  ],
+  "skipped": []
+}

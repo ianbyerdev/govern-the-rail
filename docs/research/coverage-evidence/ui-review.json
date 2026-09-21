@@ -1,0 +1,13 @@
+{
+  "source_commit": "f7d27db01702f61f1dca0fd12f59900ca030f8da",
+  "scope": "Actual local operator and visitor browser runs; screenshots captured by Playwright.",
+  "files": [
+    "coverage-c8-second-batch.png",
+    "coverage-c9-final.png",
+    "coverage-c10-final.png",
+    "coverage-c9-visitor-mobile.png",
+    "coverage-c10-visitor-mobile.png"
+  ],
+  "review": "Readable desktop/mobile controls, no clipping; separate ledger/coverage/shared-ceiling states and replay labels inspected.",
+  "hosted_provider_tested": false
+}

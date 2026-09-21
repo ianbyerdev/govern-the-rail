@@ -1,0 +1,684 @@
+{
+  "C8": {
+    "valid": true,
+    "negative_control_detected": true,
+    "conformance": {
+      "safe": {
+        "valid": true,
+        "ordinary_tape": {
+          "valid": true,
+          "events": 100,
+          "decisions_replayed": 20,
+          "capabilities_verified": 10,
+          "receipts_verified": 1,
+          "head": "sha256:fce335908c47385f63e8c45b1a4dc4a7a60e845f35b06c89736742779634ac4d",
+          "used_cents": 0,
+          "reserved_cents": 0,
+          "budgets": {
+            "notional_usd_cents": {
+              "used": 100,
+              "reserved": 900
+            }
+          },
+          "unresolved": [
+            "reservation_ebdbade2df7c4d7d",
+            "reservation_07d67d1fae734e50",
+            "reservation_648500701fa540c7",
+            "reservation_f8106b728a204214",
+            "reservation_cc78d41d743147e8",
+            "reservation_17bcd16636ab4ee4",
+            "reservation_5aff32da47c34f49",
+            "reservation_8aaecb6bb1e34177",
+            "reservation_2640f30da5b646ca"
+          ],
+          "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+        }
+      },
+      "unsafe": {
+        "valid": false,
+        "ordinary_tape": {
+          "valid": false,
+          "code": "TAPE_ACCOUNTING",
+          "message": "Admission counters differ from reconstructed authoritative allocations."
+        }
+      }
+    },
+    "expected_versus_observed": [
+      {
+        "branch": "safe",
+        "checkpoint": "promises_issued",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "accepted_receipts_withheld",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "runtime_restarted",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "unsupported_release",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "second_batch",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "promises_issued",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "accepted_receipts_withheld",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "runtime_restarted",
+        "expected": [
+          0,
+          1000,
+          1000
+        ],
+        "observed": [
+          0,
+          1000,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "unsupported_release",
+        "expected": [
+          0,
+          0,
+          1000
+        ],
+        "observed": [
+          0,
+          0,
+          1000
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "second_batch",
+        "expected": [
+          0,
+          1000,
+          2000
+        ],
+        "observed": [
+          0,
+          1000,
+          2000
+        ],
+        "matches": true
+      }
+    ],
+    "errors": [],
+    "trust_boundary": "Local signed fixture history; complete replacement of unanchored keys/history is outside guarantees."
+  },
+  "C9": {
+    "valid": true,
+    "negative_control_detected": true,
+    "conformance": {
+      "safe": {
+        "valid": true,
+        "ordinary_tape": {
+          "valid": true,
+          "events": 44,
+          "decisions_replayed": 3,
+          "capabilities_verified": 2,
+          "receipts_verified": 4,
+          "head": "sha256:66fb5a732ce865b435fd7de2c3d1089985538c1a6b36db5604e5563594778a83",
+          "used_cents": 0,
+          "reserved_cents": 0,
+          "budgets": {
+            "notional_usd_cents": {
+              "used": 200,
+              "reserved": 0
+            }
+          },
+          "unresolved": [],
+          "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+        }
+      },
+      "unsafe": {
+        "valid": false,
+        "ordinary_tape": {
+          "valid": false,
+          "code": "TAPE_ACCOUNTING",
+          "message": "Admission counters differ from reconstructed authoritative allocations."
+        }
+      }
+    },
+    "expected_versus_observed": [
+      {
+        "branch": "safe",
+        "checkpoint": "child_accepted",
+        "expected": [
+          0,
+          600,
+          600
+        ],
+        "observed": [
+          0,
+          600,
+          600
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "parent_revoked",
+        "expected": [
+          0,
+          600,
+          600
+        ],
+        "observed": [
+          0,
+          600,
+          600
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "competitor",
+        "expected": [
+          0,
+          600,
+          600
+        ],
+        "observed": [
+          0,
+          600,
+          600
+        ],
+        "matches": true
+      },
+      {
+        "branch": "safe",
+        "checkpoint": "child_completed",
+        "expected": [
+          200,
+          0,
+          200
+        ],
+        "observed": [
+          200,
+          0,
+          200
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "child_accepted",
+        "expected": [
+          0,
+          600,
+          600
+        ],
+        "observed": [
+          0,
+          600,
+          600
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "parent_revoked",
+        "expected": [
+          0,
+          0,
+          600
+        ],
+        "observed": [
+          0,
+          0,
+          600
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "competitor",
+        "expected": [
+          0,
+          600,
+          1200
+        ],
+        "observed": [
+          0,
+          600,
+          1200
+        ],
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "child_completed",
+        "expected": [
+          0,
+          600,
+          800
+        ],
+        "observed": [
+          0,
+          600,
+          800
+        ],
+        "matches": true
+      }
+    ],
+    "errors": [],
+    "trust_boundary": "Local signed fixture history; complete replacement of unanchored keys/history is outside guarantees."
+  },
+  "C10": {
+    "valid": true,
+    "negative_control_detected": true,
+    "conformance": {
+      "unsafe": {
+        "valid": false,
+        "ordinary_local_tapes": {
+          "A": {
+            "valid": true,
+            "events": 13,
+            "decisions_replayed": 1,
+            "capabilities_verified": 1,
+            "receipts_verified": 1,
+            "head": "sha256:7c86772dfc9a8cb3bcd07acd44ea9a46e0f40258ec6d6a16ce886203a86d381a",
+            "used_cents": 0,
+            "reserved_cents": 0,
+            "budgets": {
+              "notional_usd_cents": {
+                "used": 0,
+                "reserved": 1000
+              }
+            },
+            "unresolved": [
+              "reservation_e9bb6ab2895046af"
+            ],
+            "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+          },
+          "B": {
+            "valid": true,
+            "events": 13,
+            "decisions_replayed": 1,
+            "capabilities_verified": 1,
+            "receipts_verified": 1,
+            "head": "sha256:f81e483949622446ce78872d6b90b6a7aaa50660045e794da24e02bc00eb560f",
+            "used_cents": 0,
+            "reserved_cents": 0,
+            "budgets": {
+              "notional_usd_cents": {
+                "used": 0,
+                "reserved": 1000
+              }
+            },
+            "unresolved": [
+              "reservation_a8ff175a6d8044c3"
+            ],
+            "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+          }
+        },
+        "shared_scope": {
+          "L_star": 1000,
+          "valid": false
+        }
+      },
+      "covering": {
+        "valid": true,
+        "ordinary_local_tapes": {
+          "A": {
+            "valid": true,
+            "events": 13,
+            "decisions_replayed": 1,
+            "capabilities_verified": 1,
+            "receipts_verified": 1,
+            "head": "sha256:42e247d72fb0f770e0e223242cad5dfb2fdc9748334dc2a04d5557e5e254c683",
+            "used_cents": 0,
+            "reserved_cents": 0,
+            "budgets": {
+              "notional_usd_cents": {
+                "used": 0,
+                "reserved": 1000
+              }
+            },
+            "unresolved": [
+              "reservation_51a8cea822b542a3"
+            ],
+            "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+          },
+          "B": {
+            "valid": true,
+            "events": 2,
+            "decisions_replayed": 0,
+            "capabilities_verified": 0,
+            "receipts_verified": 0,
+            "head": "sha256:adae0b92134f0f96c52fa75703a49d6be43a09f0ef116c1bb63e6de3385a8718",
+            "used_cents": 0,
+            "reserved_cents": 0,
+            "budgets": {},
+            "unresolved": [],
+            "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+          }
+        },
+        "shared_scope": {
+          "L_star": 1000,
+          "valid": true
+        }
+      },
+      "split": {
+        "valid": true,
+        "ordinary_local_tapes": {
+          "A": {
+            "valid": true,
+            "events": 13,
+            "decisions_replayed": 1,
+            "capabilities_verified": 1,
+            "receipts_verified": 1,
+            "head": "sha256:49bc39a19b49a98d384e6d5192da1aeea754dd8076cffdec4ce74fa92cd8127a",
+            "used_cents": 0,
+            "reserved_cents": 0,
+            "budgets": {
+              "notional_usd_cents": {
+                "used": 0,
+                "reserved": 600
+              }
+            },
+            "unresolved": [
+              "reservation_76195ab912fa4e24"
+            ],
+            "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+          },
+          "B": {
+            "valid": true,
+            "events": 13,
+            "decisions_replayed": 1,
+            "capabilities_verified": 1,
+            "receipts_verified": 1,
+            "head": "sha256:f37bb7e1c4fb141d773293ad1f32083add41e26080e4bc39d1bf4af52ff11f9f",
+            "used_cents": 0,
+            "reserved_cents": 0,
+            "budgets": {
+              "notional_usd_cents": {
+                "used": 0,
+                "reserved": 400
+              }
+            },
+            "unresolved": [
+              "reservation_fddbb30fdaf046d6"
+            ],
+            "external_checkpoint": "Compared to caller-supplied head; no independent external anchor."
+          }
+        },
+        "shared_scope": {
+          "L_star": 1000,
+          "valid": true
+        }
+      }
+    },
+    "expected_versus_observed": [
+      {
+        "branch": "unsafe",
+        "checkpoint": "promises",
+        "expected": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            1000
+          ],
+          "E": 2000,
+          "L_star": 1000
+        },
+        "observed": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            1000
+          ],
+          "E": 2000,
+          "L_star": 1000
+        },
+        "matches": true
+      },
+      {
+        "branch": "unsafe",
+        "checkpoint": "accepted",
+        "expected": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            1000
+          ],
+          "E": 2000,
+          "L_star": 1000
+        },
+        "observed": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            1000
+          ],
+          "E": 2000,
+          "L_star": 1000
+        },
+        "matches": true
+      },
+      {
+        "branch": "covering",
+        "checkpoint": "promises",
+        "expected": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            0
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "observed": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            0
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "matches": true
+      },
+      {
+        "branch": "covering",
+        "checkpoint": "accepted",
+        "expected": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            0
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "observed": {
+          "A": [
+            0,
+            1000
+          ],
+          "B": [
+            0,
+            0
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "matches": true
+      },
+      {
+        "branch": "split",
+        "checkpoint": "promises",
+        "expected": {
+          "A": [
+            0,
+            600
+          ],
+          "B": [
+            0,
+            400
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "observed": {
+          "A": [
+            0,
+            600
+          ],
+          "B": [
+            0,
+            400
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "matches": true
+      },
+      {
+        "branch": "split",
+        "checkpoint": "accepted",
+        "expected": {
+          "A": [
+            0,
+            600
+          ],
+          "B": [
+            0,
+            400
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "observed": {
+          "A": [
+            0,
+            600
+          ],
+          "B": [
+            0,
+            400
+          ],
+          "E": 1000,
+          "L_star": 1000
+        },
+        "matches": true
+      }
+    ],
+    "errors": [],
+    "trust_boundary": "Local signed fixture history; complete replacement of unanchored keys/history is outside guarantees."
+  }
+}

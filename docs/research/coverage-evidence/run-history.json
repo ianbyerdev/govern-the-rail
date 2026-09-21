@@ -1,0 +1,17 @@
+{
+  "final_executed_source": "f7d27db01702f61f1dca0fd12f59900ca030f8da",
+  "earlier_pinned_run": {
+    "source": "4f5e3dc3e4fde9805ada11ea72369b9cd6f5b8bb",
+    "backend_passed": 359,
+    "browser_passed": 39,
+    "browser_failed": 1,
+    "archive": "earlier-run-4f5e3dc.zip",
+    "cause": "The extra visitor test exceeded the unchanged shared 10-starts/IP/10-minute quota.",
+    "fix": "Reused the existing public test visitor; retained every coverage assertion and all production quotas."
+  },
+  "interrupted_development_run": {
+    "path": ".runtime/coverage-pinned-final/interrupted.json",
+    "status": "Stopped during backend tests because launch followed a failed source-commit whitespace precheck. Dirty observations retained; no completed regression claimed."
+  },
+  "artifact_storage": "This directory is committed after the executed source commit. Its storage commit is not the executed source."
+}
