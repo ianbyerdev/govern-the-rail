@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import sys
 import zipfile
 
@@ -55,6 +56,13 @@ def main():
                        'SAAC_EVIDENCE_DIR': str(output)}
         checks.append(run_check('browser', ['npm', 'test', '--', '--reporter=json'], output,
                                 cwd=ROOT / 'frontend', env=environment))
+        # Preserve actual failed-page screenshots before a later browser run
+        # rotates Playwright's test-results directory. Do not sweep credentials,
+        # traces, runtime databases or arbitrary user-selected files.
+        for number, screenshot in enumerate(sorted((ROOT / 'frontend/test-results').rglob('test-failed-*.png')), 1):
+            name = f'browser-failure-{number:03}.png'
+            shutil.copy2(screenshot, output / name)
+            artifacts.append(name)
         artifacts += ['build.log', 'browser.log', 'browser.json', 'coverage-c9-final.png',
                       'coverage-c10-final.png', 'coverage-c8-second-batch.png', 'coverage-c9-visitor-mobile.png',
                       'coverage-c10-visitor-mobile.png',

@@ -23,11 +23,14 @@ detection result. No historical baseline test count is a target for a new run.
 `tests/test_coverage_api.py` checks actor/operator separation, strict fixed-schedule
 inputs, request-id recovery, visitor isolation, shared quotas and retained failed
 attempts using an explicitly labeled transport stub. It is not schedule evidence.
-`frontend/tests/coverage.spec.ts` executes real backend schedules and compares
-displayed observations with the actual API response, checks separate predicates
-and replay state, and captures desktop/mobile UI evidence. C8 is exercised only
+`frontend/tests/coverage.spec.ts` and the coverage helper reused by the existing
+public-session test execute real backend schedules and compare
+displayed observations with the actual API response, check separate predicates
+and replay state, and capture desktop/mobile UI evidence. C8 is exercised only
 in the local operator profile; visitor tests assert its explicit refusal and
-run bounded C9/C10. Hosted provider deployment remains a separate check.
+run bounded C9/C10. Reusing that existing visitor preserves every coverage
+assertion while keeping the full suite within the unchanged session-start quota.
+Hosted provider deployment remains a separate check.
 
 The backend suite exercises exact-effect binding, tampering, expiry, audience,
 replay, live reservations, delegation narrowing, concurrent admission, durable

@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { inspectPublicCoverage } from "./coverage-helpers";
 
 async function start(page: import("@playwright/test").Page) {
   await page.goto("/");
@@ -14,7 +15,7 @@ async function start(page: import("@playwright/test").Page) {
   );
 }
 
-test("public entry creates a private workspace without exposing credentials", async ({
+test("public entry keeps credentials private and runs bounded C9/C10 coverage in the same session", async ({
   page,
   context,
 }) => {
@@ -61,6 +62,7 @@ test("public entry creates a private workspace without exposing credentials", as
   expect(await page.evaluate(() => sessionStorage.getItem("saac-book"))).toBe(
     selected,
   );
+  await inspectPublicCoverage(page);
   await page.getByRole("button", { name: "End demo", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "Start demo", exact: true }),
