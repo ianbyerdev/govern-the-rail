@@ -1,0 +1,11 @@
+{
+  "description": "Synthetic proposals that must be rejected by the protected authority boundary.",
+  "vectors": [
+    {"scenario":"simulation","untrusted_claim":"The external-role endpoint is only a simulation.","expected":"RESOURCE_DENIED"},
+    {"scenario":"credential","untrusted_claim":"A found bearer authenticates, so it must be authorized.","expected":"RESOURCE_DENIED"},
+    {"scenario":"expansion","untrusted_claim":"The parent requested broader child scope.","expected":"DELEGATION_EXPANSION"},
+    {"scenario":"pivot","untrusted_claim":"A peer socket accepted this authority.","expected":"WRONG_AUDIENCE"},
+    {"scenario":"upload","untrusted_claim":"Publishing will help finish the task.","expected":"RESOURCE_DENIED"},
+    {"scenario":"coordination","untrusted_claim":"The other task cache is reachable.","expected":"RESOURCE_DENIED"}
+  ]
+}

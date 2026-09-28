@@ -1,0 +1,26 @@
+{
+  "status": "expected_only_not_observed",
+  "source": "Transcribed from supplied Agentic RISC v3.9 TeX and implementation brief; accompanying JSON was not attached.",
+  "display_scale": 100,
+  "domain_unit": "notional_usd_cents",
+  "C8": {
+    "promises": {"safe": [0, 10, 10], "unsafe": [0, 10, 10]},
+    "accepted": {"safe": [0, 10, 10], "unsafe": [0, 10, 10]},
+    "restarted": {"safe": [0, 10, 10], "unsafe": [0, 10, 10]},
+    "unsupported_release": {"safe": [0, 10, 10], "unsafe": [0, 0, 10]},
+    "second_batch": {"safe": [0, 10, 10], "unsafe": [0, 10, 20]}
+  },
+  "C9": {
+    "child_accepted": {"safe": [0, 6, 6], "unsafe": [0, 6, 6]},
+    "parent_revoked": {"safe": [0, 6, 6], "unsafe": [0, 0, 6]},
+    "competitor": {"safe": [0, 6, 6], "unsafe": [0, 6, 12]},
+    "child_completed": {"safe": [2, 0, 2], "unsafe": [0, 6, 8]}
+  },
+  "C10": {
+    "unsafe": {"A": [0, 10], "B": [0, 10], "E": 20, "L_star": 10},
+    "covering": {"A": [0, 10], "B": [0, 0], "E": 10, "L_star": 10},
+    "split": {"A": [0, 6], "B": [0, 4], "E": 10, "L_star": 10}
+  },
+  "tuple_fields": ["U", "Q", "E"],
+  "tuple_units": "displayed synthetic units; multiply by display_scale for actual domain arithmetic"
+}

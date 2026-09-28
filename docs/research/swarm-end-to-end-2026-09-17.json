@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-17",
+  "python": "3.14.4",
+  "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+  "measurements": [
+    {
+      "scenario": "fanout",
+      "population": 100,
+      "workers": 16,
+      "setup_seconds": 0.007,
+      "run_seconds": 1.905,
+      "audit_seconds": 0.045,
+      "counts": {
+        "denied": 36,
+        "executed": 64
+      },
+      "institutional": {
+        "capabilities": 64,
+        "redemptions": 64,
+        "receipts_accepted": 64,
+        "uncertain": 0,
+        "pending_receipts": 0
+      },
+      "risk": {
+        "budgets": {
+          "agent_slots": {
+            "used": 0,
+            "reserved": 64,
+            "limit": 64,
+            "available": 0
+          },
+          "agent_starts": {
+            "used": 64,
+            "reserved": 0,
+            "limit": 256,
+            "available": 192
+          },
+          "disclosed_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 100000,
+            "available": 100000
+          },
+          "messages": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 10000,
+            "available": 10000
+          },
+          "read_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 1000000,
+            "available": 1000000
+          }
+        }
+      },
+      "events": 815,
+      "database_bytes": 7524504
+    },
+    {
+      "scenario": "fanout",
+      "population": 1200,
+      "workers": 16,
+      "setup_seconds": 0.065,
+      "run_seconds": 18.184,
+      "audit_seconds": 0.278,
+      "counts": {
+        "denied": 1136,
+        "executed": 64
+      },
+      "institutional": {
+        "capabilities": 64,
+        "redemptions": 64,
+        "receipts_accepted": 64,
+        "uncertain": 0,
+        "pending_receipts": 0
+      },
+      "risk": {
+        "budgets": {
+          "agent_slots": {
+            "used": 0,
+            "reserved": 64,
+            "limit": 64,
+            "available": 0
+          },
+          "agent_starts": {
+            "used": 64,
+            "reserved": 0,
+            "limit": 256,
+            "available": 192
+          },
+          "disclosed_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 100000,
+            "available": 100000
+          },
+          "messages": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 10000,
+            "available": 10000
+          },
+          "read_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 1000000,
+            "available": 1000000
+          }
+        }
+      },
+      "events": 4115,
+      "database_bytes": 25456864
+    },
+    {
+      "scenario": "fanout",
+      "population": 5000,
+      "workers": 16,
+      "setup_seconds": 0.182,
+      "run_seconds": 67.157,
+      "audit_seconds": 1.361,
+      "counts": {
+        "denied": 4936,
+        "executed": 64
+      },
+      "institutional": {
+        "capabilities": 64,
+        "redemptions": 64,
+        "receipts_accepted": 64,
+        "uncertain": 0,
+        "pending_receipts": 0
+      },
+      "risk": {
+        "budgets": {
+          "agent_slots": {
+            "used": 0,
+            "reserved": 64,
+            "limit": 64,
+            "available": 0
+          },
+          "agent_starts": {
+            "used": 64,
+            "reserved": 0,
+            "limit": 256,
+            "available": 192
+          },
+          "disclosed_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 100000,
+            "available": 100000
+          },
+          "messages": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 10000,
+            "available": 10000
+          },
+          "read_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 1000000,
+            "available": 1000000
+          }
+        }
+      },
+      "events": 15515,
+      "database_bytes": 88613040
+    },
+    {
+      "scenario": "team",
+      "population": 1000,
+      "workers": 16,
+      "setup_seconds": 0.033,
+      "run_seconds": 20.322,
+      "audit_seconds": 0.83,
+      "counts": {
+        "denied": 436,
+        "executed": 564
+      },
+      "institutional": {
+        "capabilities": 564,
+        "redemptions": 564,
+        "receipts_accepted": 564,
+        "uncertain": 0,
+        "pending_receipts": 0
+      },
+      "risk": {
+        "budgets": {
+          "agent_slots": {
+            "used": 0,
+            "reserved": 64,
+            "limit": 64,
+            "available": 0
+          },
+          "agent_starts": {
+            "used": 64,
+            "reserved": 0,
+            "limit": 256,
+            "available": 192
+          },
+          "disclosed_bytes": {
+            "used": 15945,
+            "reserved": 0,
+            "limit": 100000,
+            "available": 84055
+          },
+          "messages": {
+            "used": 500,
+            "reserved": 0,
+            "limit": 10000,
+            "available": 9500
+          },
+          "read_bytes": {
+            "used": 0,
+            "reserved": 0,
+            "limit": 1000000,
+            "available": 1000000
+          }
+        }
+      },
+      "events": 7515,
+      "database_bytes": 30225136
+    }
+  ],
+  "caveat": "Single local measurements. Real signatures, reservations, socket effects and receipts; logical actors, no LLMs. Includes denial-heavy and mixed valid-cycle workload. Not a capacity guarantee."
+}
